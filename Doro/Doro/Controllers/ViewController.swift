@@ -20,6 +20,8 @@ class ViewController: UIViewController {
       // Dispose of any resources that can be recreated.
    }
    
+   // to repeat the timers, use a do-while loop.
+   
 
 }
 
