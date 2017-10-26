@@ -12,6 +12,7 @@
 		F8281EE71FA1A1A0009BAA01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8281EE51FA1A1A0009BAA01 /* Main.storyboard */; };
 		F8281EE91FA1A1A0009BAA01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8281EE81FA1A1A0009BAA01 /* Assets.xcassets */; };
 		F8281EEC1FA1A1A0009BAA01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8281EEA1FA1A1A0009BAA01 /* LaunchScreen.storyboard */; };
+		F8281EF71FA1A299009BAA01 /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8281EF61FA1A299009BAA01 /* CountdownTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		F8281EE81FA1A1A0009BAA01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8281EEB1FA1A1A0009BAA01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8281EED1FA1A1A0009BAA01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8281EF61FA1A299009BAA01 /* CountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,39 @@
 		F8281EE01FA1A19F009BAA01 /* Doro */ = {
 			isa = PBXGroup;
 			children = (
+				F8281EF31FA1A219009BAA01 /* Models */,
+				F8281EF51FA1A228009BAA01 /* Views */,
+				F8281EF41FA1A224009BAA01 /* Controllers */,
 				F8281EE11FA1A19F009BAA01 /* AppDelegate.swift */,
-				F8281EE31FA1A19F009BAA01 /* ViewController.swift */,
 				F8281EE51FA1A1A0009BAA01 /* Main.storyboard */,
 				F8281EE81FA1A1A0009BAA01 /* Assets.xcassets */,
 				F8281EEA1FA1A1A0009BAA01 /* LaunchScreen.storyboard */,
 				F8281EED1FA1A1A0009BAA01 /* Info.plist */,
 			);
 			path = Doro;
+			sourceTree = "<group>";
+		};
+		F8281EF31FA1A219009BAA01 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F8281EF61FA1A299009BAA01 /* CountdownTimer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F8281EF41FA1A224009BAA01 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F8281EE31FA1A19F009BAA01 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F8281EF51FA1A228009BAA01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8281EF71FA1A299009BAA01 /* CountdownTimer.swift in Sources */,
 				F8281EE41FA1A19F009BAA01 /* ViewController.swift in Sources */,
 				F8281EE21FA1A19F009BAA01 /* AppDelegate.swift in Sources */,
 			);
