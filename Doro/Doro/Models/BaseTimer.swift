@@ -67,6 +67,7 @@ class BaseTimer {
    // decrement workDuration by 1.
    @objc func updateTimer() {
       timeRemaining -= 1
+      // there needs to be function call to update the view somehow. Maybe this could take in a view object like in android, and update it? Research it at work!
    }
    
    
