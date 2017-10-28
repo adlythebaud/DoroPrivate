@@ -15,6 +15,7 @@ class ViewController: UIViewController {
    @IBOutlet weak var timeLabel: UILabel!
    
    @IBAction func startButtonTapped(_ sender: Any) {
+      // no timer should be created in this function.
       newTimer?.start()
    }
    
