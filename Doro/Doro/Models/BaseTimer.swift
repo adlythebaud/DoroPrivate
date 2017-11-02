@@ -18,6 +18,8 @@ class BaseTimer {
    // how long is our timePeriod
    var timeRemaining: TimeInterval
    
+   var initialTimeRemaining: TimeInterval
+   
    // helper member variables.
    var doesRepeat: Bool
    var notificationSound: Int
@@ -29,6 +31,7 @@ class BaseTimer {
         notificationSound: Int, isRunning: Bool = false, isPaused: Bool = false,
         isSet: Bool = true, timer: Timer?) {
       self.timeRemaining = timeRemaining
+      self.initialTimeRemaining = timeRemaining
       self.doesRepeat = doesRepeat
       self.notificationSound = notificationSound
       self.isRunning = isRunning
@@ -51,7 +54,7 @@ class BaseTimer {
    func stop() {
       if isRunning {
          timer?.invalidate()
-         timeRemaining = 0
+         timeRemaining = initialTimeRemaining
          isRunning = false
          print("stop was called")
          return
