@@ -30,7 +30,7 @@ class ViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       // Do any additional setup after loading the view, typically from a nib.
-      newTimer = BaseTimer(duration: 400, notificationSound: 0, timer: nil)
+      newTimer = BaseTimer(timeRemaining: 400, notificationSound: 0, timer: nil)
    }
 
    override func didReceiveMemoryWarning() {

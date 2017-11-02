@@ -25,7 +25,7 @@ class BaseTimer {
    var isSet: Bool
    var isPaused: Bool
    
-   init(duration timeRemaining: TimeInterval, doesRepeat: Bool = false,
+   init(timeRemaining: TimeInterval, doesRepeat: Bool = false,
         notificationSound: Int, isRunning: Bool = false, isPaused: Bool = false,
         isSet: Bool = true, timer: Timer?) {
       self.timeRemaining = timeRemaining
@@ -39,11 +39,12 @@ class BaseTimer {
    
    // start the timer.
    func start() {
+      print("start was called")
       print(timeRemaining)
       timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
       isRunning = true
       isPaused = false
-      print("start was called")
+      
    }
    
    // stop the timer.
