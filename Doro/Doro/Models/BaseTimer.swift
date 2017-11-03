@@ -29,7 +29,7 @@ class BaseTimer {
    
    init(timeRemaining: TimeInterval, doesRepeat: Bool = false,
         notificationSound: Int, isRunning: Bool = false, isPaused: Bool = false,
-        isSet: Bool = true, timer: Timer?) {
+        isSet: Bool = true) {
       self.timeRemaining = timeRemaining
       self.initialTimeRemaining = timeRemaining
       self.doesRepeat = doesRepeat
@@ -37,50 +37,62 @@ class BaseTimer {
       self.isRunning = isRunning
       self.isSet = isSet
       self.isPaused = isPaused
-      self.timer = timer
+      self.timer = nil
    }
    
    // start the timer.
    func start() {
-      print("start was called")
-      print(timeRemaining)
-      timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
-      isRunning = true
-      isPaused = false
+      if isRunning == false {
+         print("start was called")
+         print(timeRemaining)
+         
+         // schedule the timer object.
+         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
+         isRunning = true
+         isPaused = false
+      }
       
    }
    
    // stop the timer.
    func stop() {
-      if isRunning {
+      if isRunning || isPaused {
+         // stop the timer
          timer?.invalidate()
+         
+         // set the timeRemaining back to what it initially was.
          timeRemaining = initialTimeRemaining
          isRunning = false
-         print("stop was called")
+         
+         // end the function
          return
-      } else {
-         print("stop was called but the timer was already stopped")
       }
-      
    }
    
    // pause the timer.
    func pause() {
       if isPaused {
-         print("pause was called but the timer is already paused")
+         // already paused, nothing to do.
          return
       } else {
+         // else statement reached if isPaused is false.
+         // stop the timer
          timer?.invalidate()
+         // set isPaused
+         isRunning = false
          isPaused = true
       }
-      print("pause was called")
    }
    
    // decrement workDuration by 1.
    @objc func updateTimer() {
-      timeRemaining -= 1
-      // there needs to be function call to update the view somehow. Maybe this could take in a view object like in android, and update it? Research it at work!
-      print(timeRemaining)
+      if timeRemaining <= 0.0 {
+         stop()
+      } else {
+         timeRemaining -= 1
+         // there needs to be function call to update the view somehow. Maybe this could take in a view object like in android, and update it? Research it at work!
+         print(timeRemaining)
+      }
    }
    
    
