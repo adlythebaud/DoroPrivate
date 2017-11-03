@@ -12,16 +12,16 @@ class WorkSession {
    
    //MARK: Member Variables
    // using optionals so that I don't need to initialize them.
-   var workTimer: BaseTimer?
-   var breakTimer: BaseTimer?
-   var longBreakTimer: BaseTimer?
-   var currentTimer: BaseTimer?
+   var workTimer: BaseTimer
+   var breakTimer: BaseTimer
+   var longBreakTimer: BaseTimer
+   var currentTimer: BaseTimer
    
    //MARK: Methods
    // Get the current timer
    func getCurrentTimer() -> BaseTimer {
       // just some dummy code to appease the IDE :)
-      return currentTimer!
+      return currentTimer
    }
    
    // Set the current timer
@@ -31,18 +31,27 @@ class WorkSession {
    
    // Start the current timer
    func startCurrentTimer() {
-      currentTimer?.start()
+      currentTimer.start()
    }
    
    // Stop the current timer
    func stopCurrentTimer() {
-      currentTimer?.stop()
+      currentTimer.stop()
    }
    
    // pause the current timer
    func pauseCurrentTimer() {
-      currentTimer?.pause()
+      currentTimer.pause()
    }
+   
+   init(workTimer: BaseTimer, breakTimer: BaseTimer, longBreakTimer: BaseTimer, currentTimer: BaseTimer) {
+      self.workTimer = workTimer
+      self.breakTimer = breakTimer
+      self.longBreakTimer = breakTimer
+      self.currentTimer = workTimer
+   }
+   
+   
    
    
 }
