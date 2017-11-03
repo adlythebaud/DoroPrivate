@@ -28,7 +28,7 @@ class BaseTimer {
    var isPaused: Bool
    
    init(timeRemaining: TimeInterval, doesRepeat: Bool = false,
-        notificationSound: Int, isRunning: Bool = false, isPaused: Bool = false,
+        notificationSound: Int = 0, isRunning: Bool = false, isPaused: Bool = false,
         isSet: Bool = true) {
       self.timeRemaining = timeRemaining
       self.initialTimeRemaining = timeRemaining

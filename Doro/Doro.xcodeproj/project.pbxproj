@@ -13,7 +13,7 @@
 		F8281EE91FA1A1A0009BAA01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8281EE81FA1A1A0009BAA01 /* Assets.xcassets */; };
 		F8281EEC1FA1A1A0009BAA01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8281EEA1FA1A1A0009BAA01 /* LaunchScreen.storyboard */; };
 		F8281EF71FA1A299009BAA01 /* BaseTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8281EF61FA1A299009BAA01 /* BaseTimer.swift */; };
-		F89D3D281FABBA2200CF18C3 /* WorkTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89D3D271FABBA2200CF18C3 /* WorkTimer.swift */; };
+		F8E767241FACF835001B8DB6 /* WorkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E767231FACF835001B8DB6 /* WorkSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		F8281EEB1FA1A1A0009BAA01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8281EED1FA1A1A0009BAA01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8281EF61FA1A299009BAA01 /* BaseTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTimer.swift; sourceTree = "<group>"; };
-		F89D3D271FABBA2200CF18C3 /* WorkTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTimer.swift; sourceTree = "<group>"; };
+		F8E767231FACF835001B8DB6 /* WorkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				F8281EF61FA1A299009BAA01 /* BaseTimer.swift */,
-				F89D3D271FABBA2200CF18C3 /* WorkTimer.swift */,
+				F8E767231FACF835001B8DB6 /* WorkSession.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,8 +168,8 @@
 			files = (
 				F8281EF71FA1A299009BAA01 /* BaseTimer.swift in Sources */,
 				F8281EE41FA1A19F009BAA01 /* ViewController.swift in Sources */,
-				F89D3D281FABBA2200CF18C3 /* WorkTimer.swift in Sources */,
 				F8281EE21FA1A19F009BAA01 /* AppDelegate.swift in Sources */,
+				F8E767241FACF835001B8DB6 /* WorkSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
