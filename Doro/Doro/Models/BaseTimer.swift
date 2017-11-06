@@ -43,11 +43,11 @@ class BaseTimer {
    // start the timer.
    func start() {
       if isRunning == false {
-         print("start was called")
          print(timeRemaining)
          
          // schedule the timer object.
          timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
+         
          isRunning = true
          isPaused = false
       }
@@ -64,6 +64,7 @@ class BaseTimer {
          timeRemaining = initialTimeRemaining
          isRunning = false
          
+         print("stop called")
          // end the function
          return
       }
@@ -85,8 +86,13 @@ class BaseTimer {
    }
    
    // decrement workDuration by 1.
+   // needs to handle all cases for while the BaseTimer object is running
    @objc func updateTimer() {
       if timeRemaining <= 0.0 {
+         
+         // can't call notify after stop, because notify checks if timeRemaining is at 0.
+         // stop resets timeRemaining to what it was initially set to.
+         notify()
          stop()
       } else {
          timeRemaining -= 1
@@ -95,6 +101,17 @@ class BaseTimer {
       }
    }
    
+   // check if the currentTimer is finished
+   func isCurrentTimerFinished() -> Bool {
+      return (timeRemaining <= 0.0)
+   }
+   
+   // notify the user that currentTimer has ran out.
+   func notify() {
+      if isCurrentTimerFinished() {
+         print("Time's up! You should probably play an alert sound.")
+      }
+   }
    
    
    

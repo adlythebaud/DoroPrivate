@@ -14,10 +14,19 @@ class WorkSession {
    // using optionals so that I don't need to initialize them.
    var workTimer: BaseTimer
    var breakTimer: BaseTimer
-   var longBreakTimer: BaseTimer
+   var longBreakTimer: BaseTimer?
    var currentTimer: BaseTimer
    
    //MARK: Methods
+   
+   // init()
+   init(workTimer: BaseTimer, breakTimer: BaseTimer, longBreakTimer: BaseTimer?) {
+      self.workTimer = workTimer
+      self.breakTimer = breakTimer
+      self.longBreakTimer = breakTimer
+      self.currentTimer = workTimer
+   }
+   
    // Get the current timer
    func getCurrentTimer() -> BaseTimer {
       // just some dummy code to appease the IDE :)
@@ -37,6 +46,8 @@ class WorkSession {
    // Stop the current timer
    func stopCurrentTimer() {
       currentTimer.stop()
+      // I need to start the next timer here!!!!
+      // do a boolean condition to check.
    }
    
    // pause the current timer
@@ -44,12 +55,33 @@ class WorkSession {
       currentTimer.pause()
    }
    
-   init(workTimer: BaseTimer, breakTimer: BaseTimer, longBreakTimer: BaseTimer, currentTimer: BaseTimer) {
-      self.workTimer = workTimer
-      self.breakTimer = breakTimer
-      self.longBreakTimer = breakTimer
-      self.currentTimer = workTimer
+   // start the WorkSession
+   func start() {
+      // this function should also check what the current timer is, and switch it when the longtimer is up...
+      currentTimer.start()
    }
+   
+   // stop the WorkSession
+   func stop() {
+      currentTimer.stop()
+      // I need to start the next timer here!!!!
+      // do a boolean condition to check.
+   }
+   
+   // pause the WorkSession
+   func pause() {
+      
+   }
+   
+   @objc func test() {
+      print("test function from WorkSession class")
+   }
+   
+   
+   
+   
+   
+   
    
    
    
