@@ -17,6 +17,7 @@ class WorkSession {
    var longBreakTimer: BaseTimer?
    var currentTimer: BaseTimer
    
+   
    //MARK: Methods
    
    // init()
@@ -39,23 +40,7 @@ class WorkSession {
       self.currentTimer = currentTimer
    }
    
-   // Start the current timer
-   func startCurrentTimer() {
-      currentTimer.start()
-   }
-   
-   // Stop the current timer
-   func stopCurrentTimer() {
-      currentTimer.stop()
-      // I need to start the next timer here!!!!
-      // do a boolean condition to check.
-   }
-   
-   // pause the current timer
-   func pauseCurrentTimer() {
-      currentTimer.pause()
-   }
-   
+   // Following three methods are called from the UI the majority of the time.
    // start the WorkSession
    func start() {
       // this function should also check what the current timer is, and switch it when the longtimer is up...
@@ -76,6 +61,19 @@ class WorkSession {
    
    @objc func switchTimer() {
       print("I got the notification! We will change the timer.")
+      
+      // change the timerName and the currentTimer of the workSession class.
+      if currentTimer.timerName == .WorkTimer {
+         self.currentTimer = breakTimer
+         currentTimer.timerName = .BreakTimer
+      } else if currentTimer.timerName == .BreakTimer {
+         self.currentTimer = workTimer
+         currentTimer.timerName = .WorkTimer
+      }
+      
+      // start the new currentTimer..
+      currentTimer.start()
+      
    }
    
    
