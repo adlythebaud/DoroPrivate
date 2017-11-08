@@ -17,62 +17,57 @@ class WorkSession {
    var longBreakTimer: BaseTimer?
    var currentTimer: BaseTimer
    
+   // the WorkSession should be alive for only this long.
+   var numSessions: Int
+   var initialNumSessions: Int
    
    //MARK: Methods
-   
    // init()
-   init(workTimer: BaseTimer, breakTimer: BaseTimer, longBreakTimer: BaseTimer?) {
+   init(workTimer: BaseTimer, breakTimer: BaseTimer, longBreakTimer: BaseTimer?, numSessions: Int) {
       self.workTimer = workTimer
       self.breakTimer = breakTimer
-      self.longBreakTimer = breakTimer
+      self.longBreakTimer = longBreakTimer
       self.currentTimer = workTimer
+      self.numSessions = numSessions - 1
+      self.initialNumSessions = numSessions - 1
       NotificationCenter.default.addObserver(self, selector: #selector(self.switchTimer), name: NSNotification.Name(rawValue: timeUpNotificationKey), object: nil)
    }
    
-   // Get the current timer
-   func getCurrentTimer() -> BaseTimer {
-      // just some dummy code to appease the IDE :)
-      return currentTimer
-   }
-   
-   // Set the current timer
-   func setCurrentTimer(currentTimer: BaseTimer) {
-      self.currentTimer = currentTimer
-   }
-   
-   // Following three methods are called from the UI the majority of the time.
-   // start the WorkSession
+   // start the WorkSession. Called from UI
    func start() {
-      // this function should also check what the current timer is, and switch it when the longtimer is up...
       currentTimer.start()
    }
    
-   // stop the WorkSession. Generally called with the stop button on the UI.
+   // stop the WorkSession. Called from UI.
    func stop() {
       currentTimer.stop()
-      // I need to start the next timer here!!!!
-      // do a boolean condition to check.
    }
    
-   // pause the WorkSession
+   // pause the WorkSession. Called from UI.
    func pause() {
       currentTimer.pause()
    }
    
+   // switch the current Timer. Called from the notification center.
    @objc func switchTimer() {
-      print("I got the notification! We will change the timer.")
       
       // change the timerName and the currentTimer of the workSession class.
-      if currentTimer.timerName == .WorkTimer {
-         self.currentTimer = breakTimer
-         currentTimer.timerName = .BreakTimer
-      } else if currentTimer.timerName == .BreakTimer {
-         self.currentTimer = workTimer
-         currentTimer.timerName = .WorkTimer
+      if numSessions > 0 {
+         if currentTimer.timerName == .WorkTimer {
+            self.currentTimer = breakTimer
+            currentTimer.timerName = .BreakTimer
+         } else if currentTimer.timerName == .BreakTimer {
+            self.currentTimer = workTimer
+            currentTimer.timerName = .WorkTimer
+         }
+         // start the new currentTimer..
+         numSessions -= 1
+         print("there are \(numSessions) work sessions left.")
+         currentTimer.start()
+      } else if numSessions == 0 {
+         print("We are out of sessions")
+         self.numSessions = self.initialNumSessions
       }
-      
-      // start the new currentTimer..
-      currentTimer.start()
       
    }
    

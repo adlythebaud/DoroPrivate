@@ -35,7 +35,7 @@ class ViewController: UIViewController {
       // Do any additional setup after loading the view, typically from a nib.
       let workTimer = BaseTimer(timeRemaining: 3, timerName: .WorkTimer)
       let breakTimer = BaseTimer(timeRemaining: 2, timerName: .BreakTimer)
-      workSession = WorkSession(workTimer: workTimer, breakTimer: breakTimer, longBreakTimer: nil)
+      workSession = WorkSession(workTimer: workTimer, breakTimer: breakTimer, longBreakTimer: nil, numSessions: 3)
       
    }
 
