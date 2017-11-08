@@ -91,9 +91,11 @@ class BaseTimer {
    // needs to handle all cases for while the BaseTimer object is running
    @objc func updateTimer() {
       if timeRemaining <= 0.0 {
-         // can't call notify after stop, because notify checks if timeRemaining is at 0.
-         // stop resets timeRemaining to what it was initially set to.
-         notify()
+         
+         // send to notification center that the time is up
+         NotificationCenter.default.post(name: Notification.Name(rawValue: timeUpNotificationKey), object: self)
+         
+         // stop the timer.
          stop()
          
       } else {
@@ -104,14 +106,6 @@ class BaseTimer {
    }
    
    
-   
-   // notify the user that currentTimer has ran out.
-   func notify() {
-      if timeRemaining <= 0 {
-         print("Time's up! You should probably play an alert sound.")
-         NotificationCenter.default.post(name: Notification.Name(rawValue: timeUpNotificationKey), object: self)
-      }
-   }
    
    
    

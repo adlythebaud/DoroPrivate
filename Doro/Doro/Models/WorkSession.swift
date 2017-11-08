@@ -25,7 +25,7 @@ class WorkSession {
       self.breakTimer = breakTimer
       self.longBreakTimer = breakTimer
       self.currentTimer = workTimer
-      NotificationCenter.default.addObserver(self, selector: #selector(self.printNotificationHeard), name: NSNotification.Name(rawValue: timeUpNotificationKey), object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(self.switchTimer), name: NSNotification.Name(rawValue: timeUpNotificationKey), object: nil)
    }
    
    // Get the current timer
@@ -62,14 +62,11 @@ class WorkSession {
       currentTimer.start()
    }
    
-   // stop the WorkSession
+   // stop the WorkSession. Generally called with the stop button on the UI.
    func stop() {
       currentTimer.stop()
       // I need to start the next timer here!!!!
       // do a boolean condition to check.
-      print("workSession.stop() called")
-      
-      
    }
    
    // pause the WorkSession
@@ -77,8 +74,8 @@ class WorkSession {
       currentTimer.pause()
    }
    
-   @objc func printNotificationHeard() {
-      print("I got the notification!")
+   @objc func switchTimer() {
+      print("I got the notification! We will change the timer.")
    }
    
    
