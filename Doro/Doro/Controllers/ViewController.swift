@@ -17,26 +17,25 @@ class ViewController: UIViewController {
    
    @IBAction func startButtonTapped(_ sender: Any) {
       // no timer should be created in this function.
-      // newTimer?.start()
-      workSession?.startCurrentTimer()
+      workSession?.start()
    }
    
    @IBAction func stopButtonTapped(_ sender: Any) {
-      // newTimer?.stop()
-      workSession?.stopCurrentTimer()
+      
+      workSession?.stop()
    }
    
    @IBAction func pauseButtonTapped(_ sender: Any) {
-      // newTimer?.pause()
-      workSession?.pauseCurrentTimer()
+      
+      workSession?.pause()
    }
    
    override func viewDidLoad() {
       super.viewDidLoad()
       // Do any additional setup after loading the view, typically from a nib.
-      let newTimer = BaseTimer(timeRemaining: 5)
-      let breakTimer = BaseTimer(timeRemaining: 3)
-      workSession = WorkSession(workTimer: newTimer, breakTimer: breakTimer, longBreakTimer: nil)
+      let workTimer = BaseTimer(timeRemaining: 5, timerName: .WorkTimer)
+      let breakTimer = BaseTimer(timeRemaining: 3, timerName: .BreakTimer)
+      workSession = WorkSession(workTimer: workTimer, breakTimer: breakTimer, longBreakTimer: nil)
       
    }
 

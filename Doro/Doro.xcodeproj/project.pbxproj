@@ -13,6 +13,8 @@
 		F8281EE91FA1A1A0009BAA01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8281EE81FA1A1A0009BAA01 /* Assets.xcassets */; };
 		F8281EEC1FA1A1A0009BAA01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8281EEA1FA1A1A0009BAA01 /* LaunchScreen.storyboard */; };
 		F8281EF71FA1A299009BAA01 /* BaseTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8281EF61FA1A299009BAA01 /* BaseTimer.swift */; };
+		F8482B8C1FB27FA3008D72D8 /* CurrentTimerEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8482B8B1FB27FA3008D72D8 /* CurrentTimerEnum.swift */; };
+		F8482B8E1FB2888C008D72D8 /* NotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8482B8D1FB2888C008D72D8 /* NotificationKeys.swift */; };
 		F8E767241FACF835001B8DB6 /* WorkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E767231FACF835001B8DB6 /* WorkSession.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		F8281EEB1FA1A1A0009BAA01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8281EED1FA1A1A0009BAA01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8281EF61FA1A299009BAA01 /* BaseTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTimer.swift; sourceTree = "<group>"; };
+		F8482B8B1FB27FA3008D72D8 /* CurrentTimerEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTimerEnum.swift; sourceTree = "<group>"; };
+		F8482B8D1FB2888C008D72D8 /* NotificationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationKeys.swift; sourceTree = "<group>"; };
 		F8E767231FACF835001B8DB6 /* WorkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +79,8 @@
 			children = (
 				F8281EF61FA1A299009BAA01 /* BaseTimer.swift */,
 				F8E767231FACF835001B8DB6 /* WorkSession.swift */,
+				F8482B8D1FB2888C008D72D8 /* NotificationKeys.swift */,
+				F8482B8B1FB27FA3008D72D8 /* CurrentTimerEnum.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,8 +172,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8482B8E1FB2888C008D72D8 /* NotificationKeys.swift in Sources */,
 				F8281EF71FA1A299009BAA01 /* BaseTimer.swift in Sources */,
 				F8281EE41FA1A19F009BAA01 /* ViewController.swift in Sources */,
+				F8482B8C1FB27FA3008D72D8 /* CurrentTimerEnum.swift in Sources */,
 				F8281EE21FA1A19F009BAA01 /* AppDelegate.swift in Sources */,
 				F8E767241FACF835001B8DB6 /* WorkSession.swift in Sources */,
 			);

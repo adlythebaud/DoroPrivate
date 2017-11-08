@@ -18,6 +18,7 @@ class BaseTimer {
    // how long is our timePeriod
    var timeRemaining: TimeInterval
    
+   // how long did we initial set it to? This never changes when object is created.
    var initialTimeRemaining: TimeInterval
    
    // helper member variables.
@@ -26,12 +27,14 @@ class BaseTimer {
    var isRunning: Bool
    var isSet: Bool
    var isPaused: Bool
+   var timerName: CurrentTimerName
    
-   init(timeRemaining: TimeInterval, doesRepeat: Bool = false,
+   init(timeRemaining: TimeInterval, timerName: CurrentTimerName, doesRepeat: Bool = false,
         notificationSound: Int = 0, isRunning: Bool = false, isPaused: Bool = false,
         isSet: Bool = true) {
       self.timeRemaining = timeRemaining
       self.initialTimeRemaining = timeRemaining
+      self.timerName = timerName
       self.doesRepeat = doesRepeat
       self.notificationSound = notificationSound
       self.isRunning = isRunning
@@ -63,8 +66,7 @@ class BaseTimer {
          // set the timeRemaining back to what it initially was.
          timeRemaining = initialTimeRemaining
          isRunning = false
-         
-         print("stop called")
+      
          // end the function
          return
       }
@@ -89,11 +91,11 @@ class BaseTimer {
    // needs to handle all cases for while the BaseTimer object is running
    @objc func updateTimer() {
       if timeRemaining <= 0.0 {
-         
          // can't call notify after stop, because notify checks if timeRemaining is at 0.
          // stop resets timeRemaining to what it was initially set to.
          notify()
          stop()
+         
       } else {
          timeRemaining -= 1
          // there needs to be function call to update the view somehow. Maybe this could take in a view object like in android, and update it? Research it at work!
@@ -101,15 +103,13 @@ class BaseTimer {
       }
    }
    
-   // check if the currentTimer is finished
-   func isCurrentTimerFinished() -> Bool {
-      return (timeRemaining <= 0.0)
-   }
+   
    
    // notify the user that currentTimer has ran out.
    func notify() {
-      if isCurrentTimerFinished() {
+      if timeRemaining <= 0 {
          print("Time's up! You should probably play an alert sound.")
+         NotificationCenter.default.post(name: Notification.Name(rawValue: timeUpNotificationKey), object: self)
       }
    }
    
