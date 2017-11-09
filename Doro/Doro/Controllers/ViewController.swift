@@ -18,6 +18,9 @@ class ViewController: UIViewController {
    @IBAction func startButtonTapped(_ sender: Any) {
       // no timer should be created in this function.
       workSession?.start()
+      
+      // listen for the timerChangedKey in NotificationCenter
+      NotificationCenter.default.addObserver(self, selector: #selector(self.updateView), name: NSNotification.Name(rawValue: timerChangedKey), object: nil)
    }
    
    @IBAction func stopButtonTapped(_ sender: Any) {
@@ -28,6 +31,10 @@ class ViewController: UIViewController {
    @IBAction func pauseButtonTapped(_ sender: Any) {
       
       workSession?.pause()
+   }
+   
+   @objc func updateView() {
+      timeLabel.text = "\(workSession!.currentTimer.timeRemaining)"
    }
    
    override func viewDidLoad() {

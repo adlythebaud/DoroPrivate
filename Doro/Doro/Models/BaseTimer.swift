@@ -53,6 +53,7 @@ class BaseTimer {
          
          isRunning = true
          isPaused = false
+         NotificationCenter.default.post(name: Notification.Name(rawValue: timerChangedKey), object: self)
       }
       
    }
@@ -101,8 +102,9 @@ class BaseTimer {
       } else {
          timeRemaining -= 1
          // there needs to be function call to update the view somehow. Maybe this could take in a view object like in android, and update it? Research it at work!
-         print(timeRemaining)
+          print(timeRemaining)
          // you'll either need to create a post a notification to the NotificationCenter here, or have the view controller constantly listening for state changes....
+         NotificationCenter.default.post(name: Notification.Name(rawValue: timerChangedKey), object: self)
          
       }
    }

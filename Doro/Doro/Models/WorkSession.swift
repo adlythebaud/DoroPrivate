@@ -62,10 +62,10 @@ class WorkSession {
          }
          // start the new currentTimer..
          numSessions -= 1
-         print("there are \(numSessions) work sessions left.")
+         // print("there are \(numSessions) work sessions left.")
          currentTimer.start()
       } else if numSessions == 0 {
-         print("We are out of sessions")
+         // print("We are out of sessions")
          self.numSessions = self.initialNumSessions
       }
       

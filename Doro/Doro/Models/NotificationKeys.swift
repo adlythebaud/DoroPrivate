@@ -8,3 +8,4 @@
 
 import Foundation
 let timeUpNotificationKey = "ThebaudHouse.Doro.timeUpNotificationKey"
+let timerChangedKey = "ThebaudHouse.Doro.timerChangedKey"
