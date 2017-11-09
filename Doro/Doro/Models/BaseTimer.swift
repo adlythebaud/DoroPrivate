@@ -100,8 +100,9 @@ class BaseTimer {
          stop()
          
       } else {
-         timeRemaining -= 1
-         
+         print(timeRemaining)
+         // update time
+         timeRemaining -= 1         
          // notify observers
          NotificationCenter.default.post(name: Notification.Name(rawValue: timerChangedKey), object: self)
       }

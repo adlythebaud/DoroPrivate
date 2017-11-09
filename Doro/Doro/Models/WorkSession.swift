@@ -51,6 +51,7 @@ class WorkSession {
       currentTimer.pause()
    }
    
+   // display current timer in hr:min:sec format
    func getCurrentTimerDisplay() -> String {
       
       // convert TimeRemaining to hours:minutes:seconds for initial countdown
@@ -62,13 +63,14 @@ class WorkSession {
       return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
    }
    
+   
    // switch the current Timer. Called from the notification center.
    @objc func switchTimer() {
       // switch should happen twice before a session has been completed.
       
       // change the timerName and the currentTimer of the workSession class.
-      if numSessions > 0 {
-//         numSwitches += 1
+      if numSessions >= 1 {
+
          if currentTimer.timerName == .WorkTimer {
             self.currentTimer = breakTimer
             currentTimer.timerName = .BreakTimer
@@ -76,13 +78,16 @@ class WorkSession {
             self.currentTimer = workTimer
             currentTimer.timerName = .WorkTimer
          }
-
-//         if numSwitches == 2 {
-//            numSessions -= 1
-//            numSwitches = 0
-//         }
          
-         numSessions -= 1
+         
+         if numSwitches == 1 {
+            print("remove a session")
+            numSessions -= 1
+            numSwitches = 0
+         }
+         numSwitches += 1
+         
+         
          // start the new currentTimer..
          currentTimer.start()
          
@@ -90,6 +95,8 @@ class WorkSession {
          self.numSessions = self.initialNumSessions
          // probably should remove the observer....?
       }
+      print("numSessions: \(numSessions)")
+      print("numSwitches: \(numSwitches)")
       
    }
    
