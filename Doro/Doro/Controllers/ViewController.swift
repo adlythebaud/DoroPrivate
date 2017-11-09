@@ -18,31 +18,33 @@ class ViewController: UIViewController {
    @IBAction func startButtonTapped(_ sender: Any) {
       // no timer should be created in this function.
       workSession?.start()
-      
-      // listen for the timerChangedKey in NotificationCenter
-      NotificationCenter.default.addObserver(self, selector: #selector(self.updateView), name: NSNotification.Name(rawValue: timerChangedKey), object: nil)
    }
    
    @IBAction func stopButtonTapped(_ sender: Any) {
-      
       workSession?.stop()
    }
    
    @IBAction func pauseButtonTapped(_ sender: Any) {
-      
       workSession?.pause()
    }
    
    @objc func updateView() {
-      timeLabel.text = "\(workSession!.currentTimer.timeRemaining)"
+//      timeLabel.text = "\(workSession!.currentTimer.timeRemaining)"
+      timeLabel.text = workSession?.getCurrentTimerDisplay()
    }
+   
+   
    
    override func viewDidLoad() {
       super.viewDidLoad()
       // Do any additional setup after loading the view, typically from a nib.
+     
+      // create timers, observers, sessions all at the same time.
       let workTimer = BaseTimer(timeRemaining: 3, timerName: .WorkTimer)
       let breakTimer = BaseTimer(timeRemaining: 2, timerName: .BreakTimer)
       workSession = WorkSession(workTimer: workTimer, breakTimer: breakTimer, longBreakTimer: nil, numSessions: 3)
+      // listen for the timerChangedKey in NotificationCenter
+      NotificationCenter.default.addObserver(self, selector: #selector(self.updateView), name: NSNotification.Name(rawValue: timerChangedKey), object: nil)
       
    }
 

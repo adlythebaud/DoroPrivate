@@ -48,6 +48,17 @@ class WorkSession {
       currentTimer.pause()
    }
    
+   func getCurrentTimerDisplay() -> String {
+      
+      // convert TimeRemaining to hours:minutes:seconds for initial countdown
+      let hours = Int(currentTimer.timeRemaining) / 3600
+      let minutes = (Int(currentTimer.timeRemaining) % 3600) / 60
+      let seconds = (Int(currentTimer.timeRemaining) % 3600) % 60
+      
+      // show the correct TimeRemaining
+      return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+   }
+   
    // switch the current Timer. Called from the notification center.
    @objc func switchTimer() {
       
@@ -60,12 +71,11 @@ class WorkSession {
             self.currentTimer = workTimer
             currentTimer.timerName = .WorkTimer
          }
+         
          // start the new currentTimer..
          numSessions -= 1
-         // print("there are \(numSessions) work sessions left.")
          currentTimer.start()
       } else if numSessions == 0 {
-         // print("We are out of sessions")
          self.numSessions = self.initialNumSessions
       }
       

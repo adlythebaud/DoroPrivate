@@ -46,16 +46,16 @@ class BaseTimer {
    // start the timer.
    func start() {
       if isRunning == false {
-         print(timeRemaining)
-         
+      
          // schedule the timer object.
          timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
          
          isRunning = true
          isPaused = false
+         
+         // notify the observers that timer started to manifest it in the UI.
          NotificationCenter.default.post(name: Notification.Name(rawValue: timerChangedKey), object: self)
       }
-      
    }
    
    // stop the timer.
@@ -101,16 +101,12 @@ class BaseTimer {
          
       } else {
          timeRemaining -= 1
-         // there needs to be function call to update the view somehow. Maybe this could take in a view object like in android, and update it? Research it at work!
-          print(timeRemaining)
-         // you'll either need to create a post a notification to the NotificationCenter here, or have the view controller constantly listening for state changes....
-         NotificationCenter.default.post(name: Notification.Name(rawValue: timerChangedKey), object: self)
          
+         // notify observers
+         NotificationCenter.default.post(name: Notification.Name(rawValue: timerChangedKey), object: self)
       }
    }
    
-   
-   
-   
+
    
 }
