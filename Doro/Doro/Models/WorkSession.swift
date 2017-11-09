@@ -21,6 +21,8 @@ class WorkSession {
    var numSessions: Int
    var initialNumSessions: Int
    
+   var numSwitches: Int
+   
    //MARK: Methods
    // init()
    init(workTimer: BaseTimer, breakTimer: BaseTimer, longBreakTimer: BaseTimer?, numSessions: Int) {
@@ -28,8 +30,9 @@ class WorkSession {
       self.breakTimer = breakTimer
       self.longBreakTimer = longBreakTimer
       self.currentTimer = workTimer
-      self.numSessions = numSessions - 1
-      self.initialNumSessions = numSessions - 1
+      self.numSessions = numSessions
+      self.initialNumSessions = numSessions
+      self.numSwitches = 0
       NotificationCenter.default.addObserver(self, selector: #selector(self.switchTimer), name: NSNotification.Name(rawValue: timeUpNotificationKey), object: nil)
    }
    
@@ -61,9 +64,11 @@ class WorkSession {
    
    // switch the current Timer. Called from the notification center.
    @objc func switchTimer() {
+      // switch should happen twice before a session has been completed.
       
       // change the timerName and the currentTimer of the workSession class.
       if numSessions > 0 {
+//         numSwitches += 1
          if currentTimer.timerName == .WorkTimer {
             self.currentTimer = breakTimer
             currentTimer.timerName = .BreakTimer
@@ -71,12 +76,19 @@ class WorkSession {
             self.currentTimer = workTimer
             currentTimer.timerName = .WorkTimer
          }
+
+//         if numSwitches == 2 {
+//            numSessions -= 1
+//            numSwitches = 0
+//         }
          
-         // start the new currentTimer..
          numSessions -= 1
+         // start the new currentTimer..
          currentTimer.start()
+         
       } else if numSessions == 0 {
          self.numSessions = self.initialNumSessions
+         // probably should remove the observer....?
       }
       
    }
