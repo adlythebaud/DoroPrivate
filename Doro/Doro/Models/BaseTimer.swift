@@ -103,7 +103,7 @@ class BaseTimer {
          print(timeRemaining)
          // update time
          timeRemaining -= 1         
-         // notify observers
+         // notify observers that a tick of the clock has gone by.
          NotificationCenter.default.post(name: Notification.Name(rawValue: timerChangedKey), object: self)
       }
    }

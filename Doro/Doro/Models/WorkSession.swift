@@ -19,9 +19,9 @@ class WorkSession {
    
    // the WorkSession should be alive for only this long.
    var numSessions: Int
-   var initialNumSessions: Int
+   var currentSessionCount: Int
+   var currentSessionTimerSwitchCount: Int
    
-   var numSwitches: Int
    
    //MARK: Methods
    // init()
@@ -31,9 +31,10 @@ class WorkSession {
       self.longBreakTimer = longBreakTimer
       self.currentTimer = workTimer
       self.numSessions = numSessions
-      self.initialNumSessions = numSessions
-      self.numSwitches = 0
+      self.currentSessionCount = 0
+      self.currentSessionTimerSwitchCount = 0
       NotificationCenter.default.addObserver(self, selector: #selector(self.switchTimer), name: NSNotification.Name(rawValue: timeUpNotificationKey), object: nil)
+      
    }
    
    // start the WorkSession. Called from UI
@@ -66,11 +67,18 @@ class WorkSession {
    
    // switch the current Timer. Called from the notification center.
    @objc func switchTimer() {
-      // switch should happen twice before a session has been completed.
       
-      // change the timerName and the currentTimer of the workSession class.
-      if numSessions >= 1 {
-
+      currentSessionTimerSwitchCount += 1 // a session just happened.
+      if currentSessionTimerSwitchCount == 2 {
+         currentSessionCount += 1
+         currentSessionTimerSwitchCount = 0
+      }
+      
+      // what's the condition here?
+      if currentSessionCount == numSessions {
+         NotificationCenter.default.removeObserver(self)
+      }
+      else {
          if currentTimer.timerName == .WorkTimer {
             self.currentTimer = breakTimer
             currentTimer.timerName = .BreakTimer
@@ -78,37 +86,10 @@ class WorkSession {
             self.currentTimer = workTimer
             currentTimer.timerName = .WorkTimer
          }
-         
-         
-         if numSwitches == 1 {
-            print("remove a session")
-            numSessions -= 1
-            numSwitches = 0
-         }
-         numSwitches += 1
-         
-         
-         // start the new currentTimer..
          currentTimer.start()
-         
-      } else if numSessions == 0 {
-         self.numSessions = self.initialNumSessions
-         // probably should remove the observer....?
       }
-      print("numSessions: \(numSessions)")
-      print("numSwitches: \(numSwitches)")
       
    }
    
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-}
+} // END CLASS DEFINITION
