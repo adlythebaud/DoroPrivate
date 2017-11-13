@@ -25,16 +25,15 @@ class WorkSession {
    
    //MARK: Methods
    // init()
-   init(workTimer: BaseTimer, breakTimer: BaseTimer, longBreakTimer: BaseTimer?, numSessions: Int) {
-      self.workTimer = workTimer
-      self.breakTimer = breakTimer
+   init(workTimer: TimeInterval, breakTimer: TimeInterval, longBreakTimer: BaseTimer?, numSessions: Int) {
+      self.workTimer = BaseTimer(timeRemaining: workTimer, timerName: .WorkTimer)
+      self.breakTimer = BaseTimer(timeRemaining: breakTimer, timerName: .BreakTimer)
       self.longBreakTimer = longBreakTimer
-      self.currentTimer = workTimer
+      self.currentTimer = self.workTimer
       self.numSessions = numSessions
       self.currentSessionCount = 0
       self.currentSessionTimerSwitchCount = 0
       NotificationCenter.default.addObserver(self, selector: #selector(self.switchTimer), name: NSNotification.Name(rawValue: timeUpNotificationKey), object: nil)
-      
    }
    
    // start the WorkSession. Called from UI

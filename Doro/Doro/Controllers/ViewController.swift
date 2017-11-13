@@ -40,9 +40,11 @@ class ViewController: UIViewController {
       // Do any additional setup after loading the view, typically from a nib.
      
       // create timers, observers, sessions all at the same time.
-      let workTimer = BaseTimer(timeRemaining: 3, timerName: .WorkTimer)
-      let breakTimer = BaseTimer(timeRemaining: 2, timerName: .BreakTimer)
-      workSession = WorkSession(workTimer: workTimer, breakTimer: breakTimer, longBreakTimer: nil, numSessions: 3)
+//      let workTimer = BaseTimer(timeRemaining: 3, timerName: .WorkTimer)
+//      let breakTimer = BaseTimer(timeRemaining: 2, timerName: .BreakTimer)
+      workSession = WorkSession(workTimer: 3, breakTimer: 2, longBreakTimer: nil, numSessions: 2)
+      
+//      workSession = WorkSession(workTimer: 3, breakTimer: 2, longBreakTimer: nil, numSessions: 3)
       // listen for the timerChangedKey in NotificationCenter
       NotificationCenter.default.addObserver(self, selector: #selector(self.updateView), name: NSNotification.Name(rawValue: timerChangedKey), object: nil)
       
