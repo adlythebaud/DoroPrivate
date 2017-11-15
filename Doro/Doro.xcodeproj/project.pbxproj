@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8181B3E1FBBDB6A00217690 /* RoundActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8181B3D1FBBDB6A00217690 /* RoundActionButton.swift */; };
 		F8281EE21FA1A19F009BAA01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8281EE11FA1A19F009BAA01 /* AppDelegate.swift */; };
 		F8281EE41FA1A19F009BAA01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8281EE31FA1A19F009BAA01 /* ViewController.swift */; };
 		F8281EE71FA1A1A0009BAA01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8281EE51FA1A1A0009BAA01 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F8181B3D1FBBDB6A00217690 /* RoundActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundActionButton.swift; sourceTree = "<group>"; };
 		F8281EDE1FA1A19F009BAA01 /* Doro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8281EE11FA1A19F009BAA01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8281EE31FA1A19F009BAA01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		F8281EF51FA1A228009BAA01 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F8181B3D1FBBDB6A00217690 /* RoundActionButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				F8482B8C1FB27FA3008D72D8 /* CurrentTimerEnum.swift in Sources */,
 				F8281EE21FA1A19F009BAA01 /* AppDelegate.swift in Sources */,
 				F8E767241FACF835001B8DB6 /* WorkSession.swift in Sources */,
+				F8181B3E1FBBDB6A00217690 /* RoundActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
