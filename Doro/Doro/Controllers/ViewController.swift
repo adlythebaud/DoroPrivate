@@ -7,17 +7,22 @@
 //
 
 import UIKit
+import SRCountdownTimer
 
 class ViewController: UIViewController {
 
    
    var workSession: WorkSession?
+   var src: SRCountdownTimer?
+   
    
    @IBOutlet weak var timeLabel: UILabel!
    
    @IBAction func startButtonTapped(_ sender: Any) {
       // no timer should be created in this function.
       workSession?.start()
+      // check out https://github.com/rsrbk/SRCountdownTimer
+      src?.start(beginingValue: Int((workSession?.currentTimer.initialTimeRemaining)!))
    }
    
    @IBAction func stopButtonTapped(_ sender: Any) {
@@ -47,6 +52,7 @@ class ViewController: UIViewController {
 //      workSession = WorkSession(workTimer: 3, breakTimer: 2, longBreakTimer: nil, numSessions: 3)
       // listen for the timerChangedKey in NotificationCenter
       NotificationCenter.default.addObserver(self, selector: #selector(self.updateView), name: NSNotification.Name(rawValue: timerChangedKey), object: nil)
+      
       
    }
 
