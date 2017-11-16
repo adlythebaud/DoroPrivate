@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7505C080E14F2416FC1B0D7B /* Pods_Doro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF9997C5F78B75A363FEA389 /* Pods_Doro.framework */; };
 		F8181B3E1FBBDB6A00217690 /* RoundActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8181B3D1FBBDB6A00217690 /* RoundActionButton.swift */; };
 		F8281EE21FA1A19F009BAA01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8281EE11FA1A19F009BAA01 /* AppDelegate.swift */; };
 		F8281EE41FA1A19F009BAA01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8281EE31FA1A19F009BAA01 /* ViewController.swift */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA94C2A3D29A631E6F5F9D25 /* Pods-Doro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doro/Pods-Doro.debug.xcconfig"; sourceTree = "<group>"; };
+		E803DEE3C0E07582158E01FB /* Pods-Doro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Doro/Pods-Doro.release.xcconfig"; sourceTree = "<group>"; };
 		F8181B3D1FBBDB6A00217690 /* RoundActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundActionButton.swift; sourceTree = "<group>"; };
 		F8281EDE1FA1A19F009BAA01 /* Doro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8281EE11FA1A19F009BAA01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		F8482B8B1FB27FA3008D72D8 /* CurrentTimerEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTimerEnum.swift; sourceTree = "<group>"; };
 		F8482B8D1FB2888C008D72D8 /* NotificationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationKeys.swift; sourceTree = "<group>"; };
 		F8E767231FACF835001B8DB6 /* WorkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSession.swift; sourceTree = "<group>"; };
+		FF9997C5F78B75A363FEA389 /* Pods_Doro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7505C080E14F2416FC1B0D7B /* Pods_Doro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3379C425D1808A615C640FDC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA94C2A3D29A631E6F5F9D25 /* Pods-Doro.debug.xcconfig */,
+				E803DEE3C0E07582158E01FB /* Pods-Doro.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CDD3F77BFB0CD6DB6C7D6DDB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF9997C5F78B75A363FEA389 /* Pods_Doro.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F8281ED51FA1A19F009BAA01 = {
 			isa = PBXGroup;
 			children = (
 				F8281EE01FA1A19F009BAA01 /* Doro */,
 				F8281EDF1FA1A19F009BAA01 /* Products */,
+				3379C425D1808A615C640FDC /* Pods */,
+				CDD3F77BFB0CD6DB6C7D6DDB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,9 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8281EF01FA1A1A0009BAA01 /* Build configuration list for PBXNativeTarget "Doro" */;
 			buildPhases = (
+				8C8F119B111AFB67A0E4210C /* [CP] Check Pods Manifest.lock */,
 				F8281EDA1FA1A19F009BAA01 /* Sources */,
 				F8281EDB1FA1A19F009BAA01 /* Frameworks */,
 				F8281EDC1FA1A19F009BAA01 /* Resources */,
+				82524C367A487AB00B08F41F /* [CP] Embed Pods Frameworks */,
+				94686825911177BC66EEFE07 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -169,6 +196,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		82524C367A487AB00B08F41F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Doro/Pods-Doro-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SRCountdownTimer/SRCountdownTimer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SRCountdownTimer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Doro/Pods-Doro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C8F119B111AFB67A0E4210C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Doro-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94686825911177BC66EEFE07 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Doro/Pods-Doro-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F8281EDA1FA1A19F009BAA01 /* Sources */ = {
@@ -316,6 +397,7 @@
 		};
 		F8281EF11FA1A1A0009BAA01 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA94C2A3D29A631E6F5F9D25 /* Pods-Doro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -331,6 +413,7 @@
 		};
 		F8281EF21FA1A1A0009BAA01 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E803DEE3C0E07582158E01FB /* Pods-Doro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

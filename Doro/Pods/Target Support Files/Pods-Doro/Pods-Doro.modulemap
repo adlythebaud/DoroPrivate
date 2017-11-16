@@ -1,0 +1,6 @@
+framework module Pods_Doro {
+  umbrella header "Pods-Doro-umbrella.h"
+
+  export *
+  module * { export * }
+}
