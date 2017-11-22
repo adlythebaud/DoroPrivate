@@ -45,7 +45,6 @@ class ViewController: UIViewController {
 //      workSession = WorkSession(workTimer: 3, breakTimer: 2, longBreakTimer: nil, numSessions: 3)
       // listen for the timerChangedKey in NotificationCenter
       NotificationCenter.default.addObserver(self, selector: #selector(self.updateView), name: NSNotification.Name(rawValue: timerChangedKey), object: nil)
-      
    }
 
    override func didReceiveMemoryWarning() {

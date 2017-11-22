@@ -16,6 +16,7 @@
 		F8482B8C1FB27FA3008D72D8 /* CurrentTimerEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8482B8B1FB27FA3008D72D8 /* CurrentTimerEnum.swift */; };
 		F8482B8E1FB2888C008D72D8 /* NotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8482B8D1FB2888C008D72D8 /* NotificationKeys.swift */; };
 		F8E767241FACF835001B8DB6 /* WorkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E767231FACF835001B8DB6 /* WorkSession.swift */; };
+		F8EC14651FC62D31009CBCCB /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC14641FC62D31009CBCCB /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F8482B8B1FB27FA3008D72D8 /* CurrentTimerEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTimerEnum.swift; sourceTree = "<group>"; };
 		F8482B8D1FB2888C008D72D8 /* NotificationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationKeys.swift; sourceTree = "<group>"; };
 		F8E767231FACF835001B8DB6 /* WorkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSession.swift; sourceTree = "<group>"; };
+		F8EC14641FC62D31009CBCCB /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				F8281EF31FA1A219009BAA01 /* Models */,
-				F8281EF51FA1A228009BAA01 /* Views */,
+				F8EC14631FC62D21009CBCCB /* Views */,
 				F8281EF41FA1A224009BAA01 /* Controllers */,
 				F8281EE11FA1A19F009BAA01 /* AppDelegate.swift */,
 				F8281EE51FA1A1A0009BAA01 /* Main.storyboard */,
@@ -93,9 +95,10 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		F8281EF51FA1A228009BAA01 /* Views */ = {
+		F8EC14631FC62D21009CBCCB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F8EC14641FC62D31009CBCCB /* RoundButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			files = (
 				F8482B8E1FB2888C008D72D8 /* NotificationKeys.swift in Sources */,
 				F8281EF71FA1A299009BAA01 /* BaseTimer.swift in Sources */,
+				F8EC14651FC62D31009CBCCB /* RoundButton.swift in Sources */,
 				F8281EE41FA1A19F009BAA01 /* ViewController.swift in Sources */,
 				F8482B8C1FB27FA3008D72D8 /* CurrentTimerEnum.swift in Sources */,
 				F8281EE21FA1A19F009BAA01 /* AppDelegate.swift in Sources */,
