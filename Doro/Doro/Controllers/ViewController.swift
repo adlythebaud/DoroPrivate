@@ -33,8 +33,6 @@ class ViewController: UIViewController {
       timeLabel.text = workSession?.getCurrentTimerDisplay()
    }
    
-   
-   
    override func viewDidLoad() {
       super.viewDidLoad()
       // Do any additional setup after loading the view, typically from a nib.
