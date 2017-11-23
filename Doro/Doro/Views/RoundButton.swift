@@ -10,16 +10,16 @@ import UIKit
 
 @IBDesignable class RoundButton: UIButton {
    
-   
-   override init(frame: CGRect) {
-      super.init(frame: frame)
-      setupButton()
-   }
-   
-   required init?(coder: NSCoder) {
-      super.init(coder: coder)
-      setupButton()
-   }
+//   
+//   override init(frame: CGRect) {
+//      super.init(frame: frame)
+//      setupButton()
+//   }
+//   
+//   required init?(coder: NSCoder) {
+//      super.init(coder: coder)
+//      setupButton()
+//   }
    
    
    @IBInspectable var height: CGFloat = 30.0 {
@@ -48,9 +48,17 @@ import UIKit
       }
    }
    
-   func setupButton() {
-      self.translatesAutoresizingMaskIntoConstraints = true
-//      self.heightAnchor.constraint(equalToConstant: 40).isActive = true
-//      self.widthAnchor.constraint(equalToConstant: 40).isActive = true
-   }
+//   @IBInspectable var circular: Bool = true {
+//      didSet {
+//         if circular {
+//            self.height = self.width
+//            self.width = self.height
+//            self.layer.cornerRadius = height * 0.5
+//         }
+//         else {
+//            
+//         }
+//      }
+//   }
+   
 }
