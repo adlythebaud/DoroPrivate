@@ -11,29 +11,46 @@ import UIKit
 @IBDesignable class RoundButton: UIButton {
    
    
-//   override init(frame: CGRect) {
-//      super.init(frame: frame)
-//   }
-//   
-//   required init?(coder: NSCoder) {
-//      super.init(coder: coder)
-//   }
+   override init(frame: CGRect) {
+      super.init(frame: frame)
+      setupButton()
+   }
    
-   /*
-    // Add constraints
-    button.translatesAutoresizingMaskIntoConstraints = false
-    button.heightAnchor.constraint(equalToConstant: starSize.height).isActive = true
-    button.widthAnchor.constraint(equalToConstant: starSize.width).isActive = true
-    */
-   @IBInspectable var height: CGFloat = 10.0 {
+   required init?(coder: NSCoder) {
+      super.init(coder: coder)
+      setupButton()
+   }
+   
+   
+   @IBInspectable var height: CGFloat = 30.0 {
       didSet {
+         
          self.heightAnchor.constraint(equalToConstant: height).isActive = true
+         
+         // this sets the height in IB
+         self.frame.size.height = height
       }
    }
    
-   @IBInspectable var width: CGFloat = 10.0 {
+   @IBInspectable var width: CGFloat = 30.0 {
       didSet {
+         
          self.widthAnchor.constraint(equalToConstant: width).isActive = true
+         
+         // this sets the width in IB
+         self.frame.size.width = width
       }
+   }
+   
+   @IBInspectable var cornerRadius: CGFloat = 0 {
+      didSet {
+         self.layer.cornerRadius = cornerRadius
+      }
+   }
+   
+   func setupButton() {
+      self.translatesAutoresizingMaskIntoConstraints = true
+//      self.heightAnchor.constraint(equalToConstant: 40).isActive = true
+//      self.widthAnchor.constraint(equalToConstant: 40).isActive = true
    }
 }
