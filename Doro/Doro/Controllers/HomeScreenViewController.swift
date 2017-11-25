@@ -1,14 +1,14 @@
 //
-//  HomeScreenTableViewController.swift
+//  HomeScreenViewController.swift
 //  Doro
 //
-//  Created by Adly Thebaud on 11/23/17.
+//  Created by Adly Thebaud on 11/24/17.
 //  Copyright © 2017 ThebaudHouse. All rights reserved.
 //
 
 import UIKit
 
-class HomeScreenTableViewController: UITableViewController {
+class HomeScreenViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +17,7 @@ class HomeScreenTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,28 +29,23 @@ class HomeScreenTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-      if section == 0 {
-         return 3
-      }
-      else {
-         return 0
-      }
+        return 0
     }
 
-   
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TimerDefaultCell", for: indexPath)/* as! TimerDefaultTableViewCell*/
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell... Check EmojiDictionary app from ADWS for instructions..
+        // Configure the cell...
 
         return cell
     }
- 
+    */
 
     /*
     // Override to support conditional editing of the table view.
