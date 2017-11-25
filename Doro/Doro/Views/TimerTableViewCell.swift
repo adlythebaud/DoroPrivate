@@ -9,7 +9,12 @@
 import UIKit
 
 class TimerTableViewCell: UITableViewCell {
-
+   
+   @IBOutlet weak var nameLabel: UILabel!
+   @IBOutlet weak var descriptionLabel: UILabel!
+   @IBOutlet weak var workLengthLabel: UILabel!
+   @IBOutlet weak var breakLengthLabel: UILabel!
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

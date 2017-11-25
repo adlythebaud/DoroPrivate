@@ -97,8 +97,8 @@
 		F8281EF41FA1A224009BAA01 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F8DF849C1FC6B8B200E0E72C /* TimerConfigViewController.swift */,
 				F8A76A111FC91DA8007A79A4 /* HomeScreenViewController.swift */,
+				F8DF849C1FC6B8B200E0E72C /* TimerConfigViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
