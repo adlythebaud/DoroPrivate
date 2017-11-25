@@ -39,7 +39,7 @@ class TimerConfigViewController: UIViewController {
       // create timers, observers, sessions all at the same time.
       //      let workTimer = BaseTimer(timeRemaining: 3, timerName: .WorkTimer)
       //      let breakTimer = BaseTimer(timeRemaining: 2, timerName: .BreakTimer)
-      workSession = WorkSession(workTimer: 3, breakTimer: 2, longBreakTimer: nil, numSessions: 2)
+      workSession = WorkSession(workTimer: 3, breakTimer: 2, longBreakTimer: nil, numSessions: 2, description: nil)
       
       //      workSession = WorkSession(workTimer: 3, breakTimer: 2, longBreakTimer: nil, numSessions: 3)
       // listen for the timerChangedKey in NotificationCenter

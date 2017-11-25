@@ -16,6 +16,7 @@
 		F8482B8E1FB2888C008D72D8 /* NotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8482B8D1FB2888C008D72D8 /* NotificationKeys.swift */; };
 		F86B73F91FC76766005E970C /* DefaultTimers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86B73F81FC76766005E970C /* DefaultTimers.swift */; };
 		F8A76A121FC91DA8007A79A4 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A76A111FC91DA8007A79A4 /* HomeScreenViewController.swift */; };
+		F8A76A141FC93259007A79A4 /* TimerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A76A131FC93259007A79A4 /* TimerTableViewCell.swift */; };
 		F8DF849D1FC6B8B200E0E72C /* TimerConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF849C1FC6B8B200E0E72C /* TimerConfigViewController.swift */; };
 		F8E767241FACF835001B8DB6 /* WorkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E767231FACF835001B8DB6 /* WorkSession.swift */; };
 		F8EC14651FC62D31009CBCCB /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC14641FC62D31009CBCCB /* RoundButton.swift */; };
@@ -33,6 +34,7 @@
 		F8482B8D1FB2888C008D72D8 /* NotificationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationKeys.swift; sourceTree = "<group>"; };
 		F86B73F81FC76766005E970C /* DefaultTimers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTimers.swift; sourceTree = "<group>"; };
 		F8A76A111FC91DA8007A79A4 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		F8A76A131FC93259007A79A4 /* TimerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewCell.swift; sourceTree = "<group>"; };
 		F8DF849C1FC6B8B200E0E72C /* TimerConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerConfigViewController.swift; sourceTree = "<group>"; };
 		F8E767231FACF835001B8DB6 /* WorkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSession.swift; sourceTree = "<group>"; };
 		F8EC14641FC62D31009CBCCB /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				F8EC14641FC62D31009CBCCB /* RoundButton.swift */,
+				F8A76A131FC93259007A79A4 /* TimerTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				F8482B8C1FB27FA3008D72D8 /* CurrentTimerEnum.swift in Sources */,
 				F8A76A121FC91DA8007A79A4 /* HomeScreenViewController.swift in Sources */,
 				F8281EE21FA1A19F009BAA01 /* AppDelegate.swift in Sources */,
+				F8A76A141FC93259007A79A4 /* TimerTableViewCell.swift in Sources */,
 				F8E767241FACF835001B8DB6 /* WorkSession.swift in Sources */,
 				F86B73F91FC76766005E970C /* DefaultTimers.swift in Sources */,
 			);

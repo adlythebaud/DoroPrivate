@@ -16,6 +16,7 @@ class WorkSession {
    var breakTimer: BaseTimer
    var longBreakTimer: BaseTimer?
    var currentTimer: BaseTimer
+   var description: String?
    
    // the WorkSession should be alive for only this long.
    var numSessions: Int
@@ -25,7 +26,7 @@ class WorkSession {
    
    //MARK: Methods
    // init()
-   init(workTimer: TimeInterval, breakTimer: TimeInterval, longBreakTimer: BaseTimer?, numSessions: Int) {
+   init(workTimer: TimeInterval, breakTimer: TimeInterval, longBreakTimer: BaseTimer?, numSessions: Int, description: String?) {
       self.workTimer = BaseTimer(timeRemaining: workTimer, timerName: .WorkTimer)
       self.breakTimer = BaseTimer(timeRemaining: breakTimer, timerName: .BreakTimer)
       self.longBreakTimer = longBreakTimer
@@ -33,6 +34,7 @@ class WorkSession {
       self.numSessions = numSessions
       self.currentSessionCount = 0
       self.currentSessionTimerSwitchCount = 0
+      self.description = description
       NotificationCenter.default.addObserver(self, selector: #selector(self.switchTimer), name: NSNotification.Name(rawValue: timeUpNotificationKey), object: nil)
    }
    
