@@ -35,24 +35,25 @@ class ViewController: UIViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      // Do any additional setup after loading the view, typically from a nib.
      
-      // create timers, observers, sessions all at the same time.
-//      let workTimer = BaseTimer(timeRemaining: 3, timerName: .WorkTimer)
-//      let breakTimer = BaseTimer(timeRemaining: 2, timerName: .BreakTimer)
-      workSession = WorkSession(workTimer: 3, breakTimer: 2, longBreakTimer: nil, numSessions: 2)
+      // create WorkSession object, set time for timers.
+      workSession = WorkSession(workTimer: 200, breakTimer: 5, longBreakTimer: nil, numSessions: 2)
       
-//      workSession = WorkSession(workTimer: 3, breakTimer: 2, longBreakTimer: nil, numSessions: 3)
+      
       // listen for the timerChangedKey in NotificationCenter
+      // must always add to each view controller...
       NotificationCenter.default.addObserver(self, selector: #selector(self.updateView), name: NSNotification.Name(rawValue: timerChangedKey), object: nil)
    }
 
-   override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
+   override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(true)
+      // if workSession is running, then set this
    }
    
-   // to repeat the timers, use a do-while loop.
+   override func viewWillDisappear(_ animated: Bool) {
+      super.viewWillAppear(true)
+   }
+   
    
 
 }
