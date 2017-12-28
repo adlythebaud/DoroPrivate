@@ -36,7 +36,7 @@ class ViewController: UIViewController {
       super.viewDidLoad()
      
       // create WorkSession object, set time for timers.
-      workSession = WorkSession(workTimer: 60, breakTimer: 5, longBreakTimer: nil, numSessions: 2)
+      workSession = WorkSession(workTimer: 5, breakTimer: 3, longBreakTimer: nil, numSessions: 4)
       
       
       // listen for the timerChangedKey in NotificationCenter
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
       
       // add observer for entering background
       NotificationCenter.default.addObserver(self, selector: #selector(self.getSavedTime), name: .UIApplicationDidEnterBackground, object: nil)
-      
+
       // add observer for entering foreground
       NotificationCenter.default.addObserver(self, selector: #selector(self.updateForForeground), name: .UIApplicationWillEnterForeground, object: nil)
    }
@@ -75,9 +75,9 @@ class ViewController: UIViewController {
       if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
          workSession?.currentTimer.timeRemaining += savedDate.timeIntervalSinceNow
          workSession?.start()
-         
       }
    }
+   
    
    
 
