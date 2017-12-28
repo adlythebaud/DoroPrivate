@@ -36,7 +36,7 @@ class ViewController: UIViewController {
       super.viewDidLoad()
      
       // create WorkSession object, set time for timers.
-      workSession = WorkSession(workTimer: 5, breakTimer: 3, longBreakTimer: nil, numSessions: 4)
+      workSession = WorkSession(workTimer: 60, breakTimer: 3, longBreakTimer: nil, numSessions: 4)
       
       
       // listen for the timerChangedKey in NotificationCenter
@@ -75,6 +75,7 @@ class ViewController: UIViewController {
       if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
          workSession?.currentTimer.timeRemaining += savedDate.timeIntervalSinceNow
          workSession?.start()
+         
       }
    }
    
