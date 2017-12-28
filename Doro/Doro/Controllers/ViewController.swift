@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-   
    var workSession: WorkSession?
    
    @IBOutlet weak var timeLabel: UILabel!
@@ -41,6 +40,7 @@ class ViewController: UIViewController {
       
       
       // listen for the timerChangedKey in NotificationCenter
+      // change the view with updateView() each time a second passes
       // must always add to each view controller...
       NotificationCenter.default.addObserver(self, selector: #selector(self.updateView), name: NSNotification.Name(rawValue: timerChangedKey), object: nil)
    }
