@@ -20,10 +20,13 @@ class ViewController: UIViewController {
    @IBOutlet weak var timeLabel: UILabel!
    @IBOutlet weak var numSessionsLabel: UILabel!
    @IBOutlet weak var stepper: UIStepper!
+   @IBOutlet weak var workTimerPicker: UIDatePicker!
+   @IBOutlet weak var breakTimerPicker: UIDatePicker!
    
    //MARK: Actions
    @IBAction func startButtonTapped(_ sender: Any) {
       // no timer should be created in this function.
+      workSession = WorkSession(workTimer: workTimerPicker.countDownDuration, breakTimer: breakTimerPicker.countDownDuration, longBreakTimer: nil, numSessions: Int(stepper.value))
       workSession?.start()
    }
    
@@ -40,7 +43,6 @@ class ViewController: UIViewController {
       numSessionsLabel.text = "\(Int(stepper.value)) \(cycleText)"
    }
    
-   
    @objc func updateView() {
       timeLabel.text = workSession?.getCurrentTimerDisplay()
    }
@@ -50,8 +52,8 @@ class ViewController: UIViewController {
      
       stepper.minimumValue = 1
       // create WorkSession object, set time for timers.
-      workSession = WorkSession(workTimer: 5, breakTimer: 2, longBreakTimer: nil, numSessions: 1)
-      
+//      workSession = WorkSession(workTimer: 5, breakTimer: 2, longBreakTimer: nil, numSessions: 1)
+//      
       
       // listen for the timerChangedKey in NotificationCenter
       // change the view with updateView() each time a second passes

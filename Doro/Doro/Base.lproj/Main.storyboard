@@ -89,13 +89,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4hE-sH-b2I">
                                 <rect key="frame" x="0.0" y="62" width="375" height="216"/>
                                 <subviews>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wkl-54-bkI">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkl-54-bkI">
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="538404738.07603502">
                                             <!--2018-01-23 12:52:18 +0000-->
                                         </date>
                                     </datePicker>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="yAt-yE-pmt">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAt-yE-pmt">
                                         <rect key="frame" x="187.5" y="0.0" width="187.5" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="538404738.07603502">
                                             <!--2018-01-23 12:52:18 +0000-->
@@ -142,9 +142,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="breakTimerPicker" destination="yAt-yE-pmt" id="YoF-np-iFl"/>
                         <outlet property="numSessionsLabel" destination="Rss-j5-EFI" id="ReR-oc-VJj"/>
                         <outlet property="stepper" destination="Yfl-7a-24E" id="QbK-Un-IBc"/>
                         <outlet property="timeLabel" destination="DA4-a8-yGu" id="hgF-wI-kzM"/>
+                        <outlet property="workTimerPicker" destination="Wkl-54-bkI" id="Iut-EI-ULS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
