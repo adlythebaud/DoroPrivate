@@ -17,17 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DA4-a8-yGu">
-                                <rect key="frame" x="143" y="251" width="90" height="20.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="zSn-6T-nlB"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DA4-a8-yGu">
+                                <rect key="frame" x="142" y="514" width="90" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="ARQ-N5-576">
-                                <rect key="frame" x="76" y="359" width="224" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="ARQ-N5-576">
+                                <rect key="frame" x="78" y="378" width="218" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyh-Rj-qae" customClass="RoundButton" customModule="Doro" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -50,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTO-MJ-HuK" customClass="RoundButton" customModule="Doro" customModuleProvider="target">
-                                        <rect key="frame" x="87" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="84" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.24512975710000001" blue="0.2235135127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Stop"/>
                                         <userDefinedRuntimeAttributes>
@@ -69,7 +66,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3R-1a-EV2" customClass="RoundButton" customModule="Doro" customModuleProvider="target">
-                                        <rect key="frame" x="174" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="168" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Pause"/>
                                         <userDefinedRuntimeAttributes>
@@ -89,18 +86,64 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4hE-sH-b2I">
+                                <rect key="frame" x="0.0" y="62" width="375" height="216"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wkl-54-bkI">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="538404738.07603502">
+                                            <!--2018-01-23 12:52:18 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="yAt-yE-pmt">
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="538404738.07603502">
+                                            <!--2018-01-23 12:52:18 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6P-dF-6PD">
+                                <rect key="frame" x="20" y="312" width="335" height="29"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Cycle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rss-j5-EFI">
+                                        <rect key="frame" x="0.0" y="0.0" width="241" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Yfl-7a-24E">
+                                        <rect key="frame" x="241" y="0.0" width="94" height="29"/>
+                                        <connections>
+                                            <action selector="stepperTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="PvZ-ap-sgz"/>
+                                        </connections>
+                                    </stepper>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DA4-a8-yGu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Z3-D6-vlg"/>
-                            <constraint firstItem="DA4-a8-yGu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="143" id="Ilc-VI-cSd"/>
-                            <constraint firstItem="ARQ-N5-576" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Oe1-Rj-4OZ"/>
-                            <constraint firstItem="ARQ-N5-576" firstAttribute="top" secondItem="DA4-a8-yGu" secondAttribute="bottom" constant="87.5" id="t0G-Nb-OI8"/>
-                            <constraint firstItem="DA4-a8-yGu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="231" id="yNR-Cl-FDk"/>
+                            <constraint firstItem="ARQ-N5-576" firstAttribute="top" secondItem="X6P-dF-6PD" secondAttribute="bottom" constant="37" id="3Z3-z8-02H"/>
+                            <constraint firstItem="DA4-a8-yGu" firstAttribute="top" secondItem="ARQ-N5-576" secondAttribute="bottom" constant="86" id="3uT-Dh-mQW"/>
+                            <constraint firstItem="ARQ-N5-576" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7c3-2K-JYE"/>
+                            <constraint firstAttribute="trailing" secondItem="4hE-sH-b2I" secondAttribute="trailing" id="9OA-Tx-RWD"/>
+                            <constraint firstItem="4hE-sH-b2I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="GhL-jo-yFR"/>
+                            <constraint firstItem="X6P-dF-6PD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gyr-DN-eMP"/>
+                            <constraint firstItem="DA4-a8-yGu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="142" id="MdB-A4-Gdn"/>
+                            <constraint firstItem="X6P-dF-6PD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OH0-k3-K2g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X6P-dF-6PD" secondAttribute="trailing" constant="20" id="OHz-WW-05W"/>
+                            <constraint firstItem="4hE-sH-b2I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ghA-Mg-feP"/>
+                            <constraint firstItem="X6P-dF-6PD" firstAttribute="top" secondItem="4hE-sH-b2I" secondAttribute="bottom" constant="34" id="kmp-jp-8l8"/>
+                            <constraint firstItem="DA4-a8-yGu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nAu-E0-l7M"/>
+                            <constraint firstItem="4hE-sH-b2I" firstAttribute="centerX" secondItem="DA4-a8-yGu" secondAttribute="centerX" id="um8-Gd-t2M"/>
+                            <constraint firstItem="ARQ-N5-576" firstAttribute="top" secondItem="4hE-sH-b2I" secondAttribute="bottom" constant="100" id="wZ8-M6-1pl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DA4-a8-yGu" secondAttribute="bottom" constant="133" id="zOz-Ph-PNT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="numSessionsLabel" destination="Rss-j5-EFI" id="ReR-oc-VJj"/>
+                        <outlet property="stepper" destination="Yfl-7a-24E" id="QbK-Un-IBc"/>
                         <outlet property="timeLabel" destination="DA4-a8-yGu" id="hgF-wI-kzM"/>
                     </connections>
                 </viewController>

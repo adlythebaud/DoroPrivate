@@ -10,10 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+   //MARK: WorkSesion member variables
    var workSession: WorkSession?
+   var workTimer: Int?
+   var breakTimer: Int?
+   var numSessions: Int?
    
+   //MARK: Outlets
    @IBOutlet weak var timeLabel: UILabel!
+   @IBOutlet weak var numSessionsLabel: UILabel!
+   @IBOutlet weak var stepper: UIStepper!
    
+   //MARK: Actions
    @IBAction func startButtonTapped(_ sender: Any) {
       // no timer should be created in this function.
       workSession?.start()
@@ -27,16 +35,22 @@ class ViewController: UIViewController {
       workSession?.pause()
    }
    
+   @IBAction func stepperTapped(_ sender: Any) {
+      let cycleText = stepper.value > 1 ? "Cycles" : "Cycle"
+      numSessionsLabel.text = "\(Int(stepper.value)) \(cycleText)"
+   }
+   
+   
    @objc func updateView() {
-//      timeLabel.text = "\(workSession!.currentTimer.timeRemaining)"
       timeLabel.text = workSession?.getCurrentTimerDisplay()
    }
    
    override func viewDidLoad() {
       super.viewDidLoad()
      
+      stepper.minimumValue = 1
       // create WorkSession object, set time for timers.
-      workSession = WorkSession(workTimer: 60, breakTimer: 3, longBreakTimer: nil, numSessions: 4)
+      workSession = WorkSession(workTimer: 5, breakTimer: 2, longBreakTimer: nil, numSessions: 1)
       
       
       // listen for the timerChangedKey in NotificationCenter
@@ -57,7 +71,7 @@ class ViewController: UIViewController {
    }
    
    override func viewWillDisappear(_ animated: Bool) {
-      super.viewWillAppear(true)
+      super.viewWillDisappear(true)
    }
    
    @objc func getSavedTime() {
