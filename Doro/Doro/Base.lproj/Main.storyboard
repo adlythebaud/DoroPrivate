@@ -17,12 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DA4-a8-yGu">
-                                <rect key="frame" x="142" y="514" width="90" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="ARQ-N5-576">
                                 <rect key="frame" x="78" y="378" width="218" height="50"/>
                                 <subviews>
@@ -120,32 +114,41 @@
                                     </stepper>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DA4-a8-yGu">
+                                <rect key="frame" x="0.0" y="62" width="375" height="216"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ARQ-N5-576" firstAttribute="top" secondItem="X6P-dF-6PD" secondAttribute="bottom" constant="37" id="3Z3-z8-02H"/>
-                            <constraint firstItem="DA4-a8-yGu" firstAttribute="top" secondItem="ARQ-N5-576" secondAttribute="bottom" constant="86" id="3uT-Dh-mQW"/>
                             <constraint firstItem="ARQ-N5-576" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7c3-2K-JYE"/>
                             <constraint firstAttribute="trailing" secondItem="4hE-sH-b2I" secondAttribute="trailing" id="9OA-Tx-RWD"/>
                             <constraint firstItem="4hE-sH-b2I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="GhL-jo-yFR"/>
                             <constraint firstItem="X6P-dF-6PD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gyr-DN-eMP"/>
-                            <constraint firstItem="DA4-a8-yGu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="142" id="MdB-A4-Gdn"/>
                             <constraint firstItem="X6P-dF-6PD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OH0-k3-K2g"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X6P-dF-6PD" secondAttribute="trailing" constant="20" id="OHz-WW-05W"/>
                             <constraint firstItem="4hE-sH-b2I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ghA-Mg-feP"/>
                             <constraint firstItem="X6P-dF-6PD" firstAttribute="top" secondItem="4hE-sH-b2I" secondAttribute="bottom" constant="34" id="kmp-jp-8l8"/>
-                            <constraint firstItem="DA4-a8-yGu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nAu-E0-l7M"/>
-                            <constraint firstItem="4hE-sH-b2I" firstAttribute="centerX" secondItem="DA4-a8-yGu" secondAttribute="centerX" id="um8-Gd-t2M"/>
+                            <constraint firstItem="DA4-a8-yGu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nwE-lG-IGX"/>
+                            <constraint firstItem="DA4-a8-yGu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="rtb-UF-Phs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DA4-a8-yGu" secondAttribute="trailing" id="vqU-Ej-Pxk"/>
                             <constraint firstItem="ARQ-N5-576" firstAttribute="top" secondItem="4hE-sH-b2I" secondAttribute="bottom" constant="100" id="wZ8-M6-1pl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DA4-a8-yGu" secondAttribute="bottom" constant="133" id="zOz-Ph-PNT"/>
+                            <constraint firstItem="X6P-dF-6PD" firstAttribute="top" secondItem="DA4-a8-yGu" secondAttribute="bottom" constant="34" id="yZ6-sl-qcx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="breakTimerPicker" destination="yAt-yE-pmt" id="YoF-np-iFl"/>
                         <outlet property="numSessionsLabel" destination="Rss-j5-EFI" id="ReR-oc-VJj"/>
+                        <outlet property="pauseButton" destination="X3R-1a-EV2" id="moh-5g-fMH"/>
+                        <outlet property="startButton" destination="oyh-Rj-qae" id="4aH-jW-wvE"/>
                         <outlet property="stepper" destination="Yfl-7a-24E" id="QbK-Un-IBc"/>
+                        <outlet property="stopButton" destination="gTO-MJ-HuK" id="HGs-dy-nFx"/>
                         <outlet property="timeLabel" destination="DA4-a8-yGu" id="hgF-wI-kzM"/>
+                        <outlet property="timePickerStackView" destination="4hE-sH-b2I" id="kTr-u3-dvw"/>
                         <outlet property="workTimerPicker" destination="Wkl-54-bkI" id="Iut-EI-ULS"/>
                     </connections>
                 </viewController>

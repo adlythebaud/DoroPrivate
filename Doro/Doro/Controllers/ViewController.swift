@@ -22,19 +22,29 @@ class ViewController: UIViewController {
    @IBOutlet weak var stepper: UIStepper!
    @IBOutlet weak var workTimerPicker: UIDatePicker!
    @IBOutlet weak var breakTimerPicker: UIDatePicker!
+   @IBOutlet weak var timePickerStackView: UIStackView!
+   @IBOutlet weak var startButton: RoundButton!
+   @IBOutlet weak var stopButton: RoundButton!
+   @IBOutlet weak var pauseButton: RoundButton!
+   
    
    //MARK: Actions
    @IBAction func startButtonTapped(_ sender: Any) {
       // no timer should be created in this function.
       workSession = WorkSession(workTimer: workTimerPicker.countDownDuration, breakTimer: breakTimerPicker.countDownDuration, longBreakTimer: nil, numSessions: Int(stepper.value))
+      timePickerStackView.isHidden = true
+      timeLabel.isHidden = false
       workSession?.start()
    }
    
    @IBAction func stopButtonTapped(_ sender: Any) {
+      timeLabel.isHidden = true
+      timePickerStackView.isHidden = false
       workSession?.stop()
    }
    
    @IBAction func pauseButtonTapped(_ sender: Any) {
+      print("pause button tapped")
       workSession?.pause()
    }
    
@@ -51,9 +61,7 @@ class ViewController: UIViewController {
       super.viewDidLoad()
      
       stepper.minimumValue = 1
-      // create WorkSession object, set time for timers.
-//      workSession = WorkSession(workTimer: 5, breakTimer: 2, longBreakTimer: nil, numSessions: 1)
-//      
+      timeLabel.isHidden = true
       
       // listen for the timerChangedKey in NotificationCenter
       // change the view with updateView() each time a second passes
