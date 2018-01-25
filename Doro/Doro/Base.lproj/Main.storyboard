@@ -18,21 +18,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="ARQ-N5-576">
-                                <rect key="frame" x="78" y="378" width="218" height="50"/>
+                                <rect key="frame" x="33" y="378" width="308" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyh-Rj-qae" customClass="RoundButton" customModule="Doro" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <color key="backgroundColor" red="0.076343124149999997" green="0.80207011419999996" blue="0.067113121649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Start"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="height">
-                                                <real key="value" value="50"/>
+                                                <real key="value" value="80"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="width">
-                                                <real key="value" value="50"/>
+                                                <real key="value" value="80"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="25"/>
+                                                <real key="value" value="40"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="circular" value="YES"/>
                                         </userDefinedRuntimeAttributes>
@@ -41,18 +41,18 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTO-MJ-HuK" customClass="RoundButton" customModule="Doro" customModuleProvider="target">
-                                        <rect key="frame" x="84" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="114" y="0.0" width="80" height="80"/>
                                         <color key="backgroundColor" red="1" green="0.24512975710000001" blue="0.2235135127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Stop"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="height">
-                                                <real key="value" value="50"/>
+                                                <real key="value" value="80"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="width">
-                                                <real key="value" value="50"/>
+                                                <real key="value" value="80"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="25"/>
+                                                <real key="value" value="40"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -60,18 +60,18 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3R-1a-EV2" customClass="RoundButton" customModule="Doro" customModuleProvider="target">
-                                        <rect key="frame" x="168" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="228" y="0.0" width="80" height="80"/>
                                         <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Pause"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="height">
-                                                <real key="value" value="50"/>
+                                                <real key="value" value="80"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="width">
-                                                <real key="value" value="50"/>
+                                                <real key="value" value="80"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="25"/>
+                                                <real key="value" value="40"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -114,33 +114,45 @@
                                     </stepper>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DA4-a8-yGu">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="U7H-fO-lzm">
                                 <rect key="frame" x="0.0" y="62" width="375" height="216"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DA4-a8-yGu">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="216"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Id7-St-JJl">
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="216"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.80232788705583757" green="0.80232788705583757" blue="0.80232788705583757" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ARQ-N5-576" firstAttribute="top" secondItem="X6P-dF-6PD" secondAttribute="bottom" constant="37" id="3Z3-z8-02H"/>
                             <constraint firstItem="ARQ-N5-576" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7c3-2K-JYE"/>
                             <constraint firstAttribute="trailing" secondItem="4hE-sH-b2I" secondAttribute="trailing" id="9OA-Tx-RWD"/>
+                            <constraint firstItem="U7H-fO-lzm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="9r9-7l-Kar"/>
+                            <constraint firstItem="X6P-dF-6PD" firstAttribute="top" secondItem="U7H-fO-lzm" secondAttribute="bottom" constant="34" id="Cwn-tA-Uge"/>
                             <constraint firstItem="4hE-sH-b2I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="GhL-jo-yFR"/>
                             <constraint firstItem="X6P-dF-6PD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gyr-DN-eMP"/>
+                            <constraint firstItem="U7H-fO-lzm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HSP-sf-zrp"/>
                             <constraint firstItem="X6P-dF-6PD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OH0-k3-K2g"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X6P-dF-6PD" secondAttribute="trailing" constant="20" id="OHz-WW-05W"/>
+                            <constraint firstAttribute="trailing" secondItem="U7H-fO-lzm" secondAttribute="trailing" id="V8C-oI-kk8"/>
                             <constraint firstItem="4hE-sH-b2I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ghA-Mg-feP"/>
                             <constraint firstItem="X6P-dF-6PD" firstAttribute="top" secondItem="4hE-sH-b2I" secondAttribute="bottom" constant="34" id="kmp-jp-8l8"/>
-                            <constraint firstItem="DA4-a8-yGu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nwE-lG-IGX"/>
-                            <constraint firstItem="DA4-a8-yGu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="rtb-UF-Phs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DA4-a8-yGu" secondAttribute="trailing" id="vqU-Ej-Pxk"/>
                             <constraint firstItem="ARQ-N5-576" firstAttribute="top" secondItem="4hE-sH-b2I" secondAttribute="bottom" constant="100" id="wZ8-M6-1pl"/>
-                            <constraint firstItem="X6P-dF-6PD" firstAttribute="top" secondItem="DA4-a8-yGu" secondAttribute="bottom" constant="34" id="yZ6-sl-qcx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="breakTimeLabel" destination="Id7-St-JJl" id="9TO-Cj-LFu"/>
                         <outlet property="breakTimerPicker" destination="yAt-yE-pmt" id="YoF-np-iFl"/>
                         <outlet property="cycleControlStackView" destination="X6P-dF-6PD" id="hcW-2v-QjS"/>
                         <outlet property="numSessionsLabel" destination="Rss-j5-EFI" id="ReR-oc-VJj"/>
@@ -149,6 +161,7 @@
                         <outlet property="stepper" destination="Yfl-7a-24E" id="QbK-Un-IBc"/>
                         <outlet property="stopButton" destination="gTO-MJ-HuK" id="HGs-dy-nFx"/>
                         <outlet property="timeLabel" destination="DA4-a8-yGu" id="hgF-wI-kzM"/>
+                        <outlet property="timeLabelStackView" destination="U7H-fO-lzm" id="N3F-L3-YhV"/>
                         <outlet property="timePickerStackView" destination="4hE-sH-b2I" id="kTr-u3-dvw"/>
                         <outlet property="workTimerPicker" destination="Wkl-54-bkI" id="Iut-EI-ULS"/>
                     </connections>

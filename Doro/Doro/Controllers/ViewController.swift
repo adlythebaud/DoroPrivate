@@ -18,12 +18,15 @@ class ViewController: UIViewController {
    
    //MARK: Outlets
    @IBOutlet weak var timeLabel: UILabel!
+   @IBOutlet weak var breakTimeLabel: UILabel!
+   
    @IBOutlet weak var numSessionsLabel: UILabel!
    @IBOutlet weak var stepper: UIStepper!
    @IBOutlet weak var workTimerPicker: UIDatePicker!
    @IBOutlet weak var breakTimerPicker: UIDatePicker!
    @IBOutlet weak var timePickerStackView: UIStackView!
    @IBOutlet weak var cycleControlStackView: UIStackView!
+   @IBOutlet weak var timeLabelStackView: UIStackView!
    @IBOutlet weak var startButton: RoundButton!
    @IBOutlet weak var stopButton: RoundButton!
    @IBOutlet weak var pauseButton: RoundButton!
@@ -40,7 +43,7 @@ class ViewController: UIViewController {
       }
       timePickerStackView.isHidden = true
       cycleControlStackView.isHidden = true
-      timeLabel.isHidden = false
+      timeLabelStackView.isHidden = false
       startButton.isEnabled = false
       startButton.isOpaque = true
       stopButton.isEnabled = true
@@ -51,7 +54,8 @@ class ViewController: UIViewController {
    }
    
    @IBAction func stopButtonTapped(_ sender: Any) {
-      timeLabel.isHidden = true
+      timeLabelStackView.isHidden = true
+      
       timePickerStackView.isHidden = false
       cycleControlStackView.isHidden = false
       startButton.isEnabled = true
@@ -84,13 +88,14 @@ class ViewController: UIViewController {
    
    @objc func updateView() {
       timeLabel.text = workSession?.getCurrentTimerDisplay()
+      breakTimeLabel.text = workSession?.getBreakTimerDisplay()
    }
    
    override func viewDidLoad() {
       super.viewDidLoad()
       
       stepper.minimumValue = 1
-      timeLabel.isHidden = true
+      timeLabelStackView.isHidden = true
       startButton.isEnabled = true
       startButton.isOpaque = false
       pauseButton.isEnabled = false

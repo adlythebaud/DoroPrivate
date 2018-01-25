@@ -63,6 +63,16 @@ class WorkSession {
       return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
    }
    
+   func getBreakTimerDisplay() -> String {
+      // convert TimeRemaining to hours:minutes:seconds for initial countdown
+      let hours = Int(breakTimer.timeRemaining) / 3600
+      let minutes = (Int(breakTimer.timeRemaining) % 3600) / 60
+      let seconds = (Int(breakTimer.timeRemaining) % 3600) % 60
+      
+      // show the correct TimeRemaining
+      return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+   }
+   
    
    // switch the current Timer. Called from the notification center.
    @objc func switchTimer() {
