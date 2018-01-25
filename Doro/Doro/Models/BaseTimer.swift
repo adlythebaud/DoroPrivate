@@ -8,9 +8,8 @@
 
 import Foundation
 import UIKit
-// Models don't need to know anything about views or controllers.
+
 class BaseTimer {
-   // how long are we working for
    
    // our actual timers.
    var timer: Timer?
@@ -46,13 +45,11 @@ class BaseTimer {
    // start the timer.
    func start() {
       if isRunning == false {
-      
          // schedule the timer object.
          timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
          
          isRunning = true
          isPaused = false
-         
          // notify the observers that timer started to manifest it in the UI.
          NotificationCenter.default.post(name: Notification.Name(rawValue: timerChangedKey), object: self)
       }
@@ -61,6 +58,7 @@ class BaseTimer {
    // stop the timer.
    func stop() {
       if isRunning || isPaused {
+         
          // stop the timer
          timer?.invalidate()
          
@@ -85,6 +83,7 @@ class BaseTimer {
          // set isPaused
          isRunning = false
          isPaused = true
+         
       }
    }
    

@@ -23,6 +23,7 @@ class ViewController: UIViewController {
    @IBOutlet weak var workTimerPicker: UIDatePicker!
    @IBOutlet weak var breakTimerPicker: UIDatePicker!
    @IBOutlet weak var timePickerStackView: UIStackView!
+   @IBOutlet weak var cycleControlStackView: UIStackView!
    @IBOutlet weak var startButton: RoundButton!
    @IBOutlet weak var stopButton: RoundButton!
    @IBOutlet weak var pauseButton: RoundButton!
@@ -31,21 +32,49 @@ class ViewController: UIViewController {
    //MARK: Actions
    @IBAction func startButtonTapped(_ sender: Any) {
       // no timer should be created in this function.
-      workSession = WorkSession(workTimer: workTimerPicker.countDownDuration, breakTimer: breakTimerPicker.countDownDuration, longBreakTimer: nil, numSessions: Int(stepper.value))
+      // following line of code should happen only once. Shouldn't happen if this method is called
+      // after pauseButtonTapped() is called.
+      
+      if workSession == nil {
+         workSession = WorkSession(workTimer: workTimerPicker.countDownDuration, breakTimer: breakTimerPicker.countDownDuration, longBreakTimer: nil, numSessions: Int(stepper.value))
+      }
       timePickerStackView.isHidden = true
+      cycleControlStackView.isHidden = true
       timeLabel.isHidden = false
+      startButton.isEnabled = false
+      startButton.isOpaque = true
+      stopButton.isEnabled = true
+      stopButton.isOpaque = false
+      pauseButton.isEnabled = true
+      pauseButton.isOpaque = false
       workSession?.start()
    }
    
    @IBAction func stopButtonTapped(_ sender: Any) {
       timeLabel.isHidden = true
       timePickerStackView.isHidden = false
+      cycleControlStackView.isHidden = false
+      startButton.isEnabled = true
+      startButton.isOpaque = false
+      stopButton.isEnabled = false
+      stopButton.isOpaque = true
+      pauseButton.isEnabled = false
+      pauseButton.isOpaque = true
       workSession?.stop()
+      workSession = nil
    }
    
    @IBAction func pauseButtonTapped(_ sender: Any) {
       print("pause button tapped")
+      startButton.isEnabled = true
+      startButton.isOpaque = false
+      stopButton.isEnabled = true
+      stopButton.isOpaque = false
+      pauseButton.isEnabled = false
+      pauseButton.isOpaque = true
+      
       workSession?.pause()
+      
    }
    
    @IBAction func stepperTapped(_ sender: Any) {
@@ -59,9 +88,15 @@ class ViewController: UIViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
-     
+      
       stepper.minimumValue = 1
       timeLabel.isHidden = true
+      startButton.isEnabled = true
+      startButton.isOpaque = false
+      pauseButton.isEnabled = false
+      pauseButton.isOpaque = true
+      stopButton.isEnabled = false
+      stopButton.isOpaque = true
       
       // listen for the timerChangedKey in NotificationCenter
       // change the view with updateView() each time a second passes

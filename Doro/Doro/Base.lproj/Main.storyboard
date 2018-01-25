@@ -142,6 +142,7 @@
                     </view>
                     <connections>
                         <outlet property="breakTimerPicker" destination="yAt-yE-pmt" id="YoF-np-iFl"/>
+                        <outlet property="cycleControlStackView" destination="X6P-dF-6PD" id="hcW-2v-QjS"/>
                         <outlet property="numSessionsLabel" destination="Rss-j5-EFI" id="ReR-oc-VJj"/>
                         <outlet property="pauseButton" destination="X3R-1a-EV2" id="moh-5g-fMH"/>
                         <outlet property="startButton" destination="oyh-Rj-qae" id="4aH-jW-wvE"/>
