@@ -25,6 +25,17 @@ class WorkSession {
    
    //MARK: Methods
    // init()
+   init(workTimer: TimeInterval, breakTimer: TimeInterval, numSessions: Int) {
+      self.workTimer = BaseTimer(timeRemaining: workTimer, timerName: .WorkTimer)
+      self.breakTimer = BaseTimer(timeRemaining: breakTimer, timerName: .BreakTimer)
+      self.currentTimer = self.workTimer
+      self.numSessions = numSessions
+      self.currentSessionCount = 0
+      self.currentSessionTimerSwitchCount = 0
+      NotificationCenter.default.addObserver(self, selector: #selector(self.switchTimer), name: NSNotification.Name(rawValue: timeUpNotificationKey), object: nil)
+   }
+   
+   // init()
    init(workTimer: TimeInterval, breakTimer: TimeInterval, longBreakTimer: BaseTimer?, numSessions: Int) {
       self.workTimer = BaseTimer(timeRemaining: workTimer, timerName: .WorkTimer)
       self.breakTimer = BaseTimer(timeRemaining: breakTimer, timerName: .BreakTimer)
@@ -63,6 +74,7 @@ class WorkSession {
       return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
    }
    
+   // display break timer in hr:min:sec format
    func getBreakTimerDisplay() -> String {
       // convert TimeRemaining to hours:minutes:seconds for initial countdown
       let hours = Int(breakTimer.timeRemaining) / 3600
@@ -76,7 +88,6 @@ class WorkSession {
    
    // switch the current Timer. Called from the notification center.
    @objc func switchTimer() {
-      
       currentSessionTimerSwitchCount += 1 // a session just happened.
       if currentSessionTimerSwitchCount == 2 {
          currentSessionCount += 1

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F80B2C98208FF8C400F9C4DA /* DoroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80B2C97208FF8C400F9C4DA /* DoroUITests.swift */; };
 		F8281EE21FA1A19F009BAA01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8281EE11FA1A19F009BAA01 /* AppDelegate.swift */; };
 		F8281EE41FA1A19F009BAA01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8281EE31FA1A19F009BAA01 /* ViewController.swift */; };
 		F8281EE71FA1A1A0009BAA01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8281EE51FA1A1A0009BAA01 /* Main.storyboard */; };
@@ -19,7 +20,20 @@
 		F8EC14651FC62D31009CBCCB /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC14641FC62D31009CBCCB /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F80B2C9A208FF8C400F9C4DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8281ED61FA1A19F009BAA01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8281EDD1FA1A19F009BAA01;
+			remoteInfo = Doro;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		F80B2C95208FF8C300F9C4DA /* DoroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F80B2C97208FF8C400F9C4DA /* DoroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoroUITests.swift; sourceTree = "<group>"; };
+		F80B2C99208FF8C400F9C4DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8281EDE1FA1A19F009BAA01 /* Doro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8281EE11FA1A19F009BAA01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8281EE31FA1A19F009BAA01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +49,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F80B2C92208FF8C300F9C4DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F8281EDB1FA1A19F009BAA01 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,10 +66,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F80B2C96208FF8C300F9C4DA /* DoroUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F80B2C97208FF8C400F9C4DA /* DoroUITests.swift */,
+				F80B2C99208FF8C400F9C4DA /* Info.plist */,
+			);
+			path = DoroUITests;
+			sourceTree = "<group>";
+		};
 		F8281ED51FA1A19F009BAA01 = {
 			isa = PBXGroup;
 			children = (
 				F8281EE01FA1A19F009BAA01 /* Doro */,
+				F80B2C96208FF8C300F9C4DA /* DoroUITests */,
 				F8281EDF1FA1A19F009BAA01 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				F8281EDE1FA1A19F009BAA01 /* Doro.app */,
+				F80B2C95208FF8C300F9C4DA /* DoroUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +138,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F80B2C94208FF8C300F9C4DA /* DoroUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F80B2C9E208FF8C400F9C4DA /* Build configuration list for PBXNativeTarget "DoroUITests" */;
+			buildPhases = (
+				F80B2C91208FF8C300F9C4DA /* Sources */,
+				F80B2C92208FF8C300F9C4DA /* Frameworks */,
+				F80B2C93208FF8C300F9C4DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F80B2C9B208FF8C400F9C4DA /* PBXTargetDependency */,
+			);
+			name = DoroUITests;
+			productName = DoroUITests;
+			productReference = F80B2C95208FF8C300F9C4DA /* DoroUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F8281EDD1FA1A19F009BAA01 /* Doro */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8281EF01FA1A1A0009BAA01 /* Build configuration list for PBXNativeTarget "Doro" */;
@@ -129,10 +179,15 @@
 		F8281ED61FA1A19F009BAA01 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = ThebaudHouse;
 				TargetAttributes = {
+					F80B2C94208FF8C300F9C4DA = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F8281EDD1FA1A19F009BAA01;
+					};
 					F8281EDD1FA1A19F009BAA01 = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
@@ -158,11 +213,19 @@
 			projectRoot = "";
 			targets = (
 				F8281EDD1FA1A19F009BAA01 /* Doro */,
+				F80B2C94208FF8C300F9C4DA /* DoroUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F80B2C93208FF8C300F9C4DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F8281EDC1FA1A19F009BAA01 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -176,6 +239,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F80B2C91208FF8C300F9C4DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F80B2C98208FF8C400F9C4DA /* DoroUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F8281EDA1FA1A19F009BAA01 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -191,6 +262,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F80B2C9B208FF8C400F9C4DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8281EDD1FA1A19F009BAA01 /* Doro */;
+			targetProxy = F80B2C9A208FF8C400F9C4DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F8281EE51FA1A1A0009BAA01 /* Main.storyboard */ = {
@@ -212,6 +291,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F80B2C9C208FF8C400F9C4DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F2WG4JNKQC;
+				INFOPLIST_FILE = DoroUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ThebaudHouse.DoroUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Doro;
+			};
+			name = Debug;
+		};
+		F80B2C9D208FF8C400F9C4DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F2WG4JNKQC;
+				INFOPLIST_FILE = DoroUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ThebaudHouse.DoroUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Doro;
+			};
+			name = Release;
+		};
 		F8281EEE1FA1A1A0009BAA01 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -226,6 +343,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -233,6 +351,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -260,7 +379,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -283,6 +402,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -290,6 +410,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -311,7 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -326,6 +447,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F2WG4JNKQC;
 				INFOPLIST_FILE = Doro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ThebaudHouse.Doro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -341,6 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F2WG4JNKQC;
 				INFOPLIST_FILE = Doro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ThebaudHouse.Doro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -352,6 +475,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F80B2C9E208FF8C400F9C4DA /* Build configuration list for PBXNativeTarget "DoroUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F80B2C9C208FF8C400F9C4DA /* Debug */,
+				F80B2C9D208FF8C400F9C4DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F8281ED91FA1A19F009BAA01 /* Build configuration list for PBXProject "Doro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
