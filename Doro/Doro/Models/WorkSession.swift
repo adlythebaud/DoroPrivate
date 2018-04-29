@@ -111,5 +111,42 @@ class WorkSession {
       
    }
    
+   /**
+    * += OVERLOADED OPERATORS
+    */
+   static func += ( lhs: WorkSession, rhs: TimeInterval) {
+      // lhs = // Your implementation here
+      /*
+       Figure out how many timeSessions you need to skip
+       Figure out if you need to go to the base timer.
+       Why can't we just get an alarm to go off in timeremaining seconds from the time we enter background?
+       
+       cases: add the rhs (TimeInterval) to the worksession's current timer timeRemaining.
+       if the rhs > lhs.timeRemaining, 
+       */
+      
+      /*
+       Example cases:
+       
+       workSession += 20
+         Should be as if we add 20 seconds to the current WorkSession.
+       */
+      
+      
+   }
+   
+   static func += ( lhs: WorkSession, rhs: WorkSession) {
+      // lhs = // Your implementation here
+      /*
+       Figure out how many timeSessions you need to skip
+       Figure out if you need to go to the base timer.
+       Why can't we just get an alarm to go off in timeremaining seconds from the time we enter background?
+       
+       cases: add the rhs (TimeInterval) to the worksession's current timer timeRemaining.
+       if the rhs > lhs.timeRemaining,
+       */
+      
+      
+   }
    
 } // END CLASS DEFINITION

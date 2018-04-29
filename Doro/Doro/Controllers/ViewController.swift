@@ -44,10 +44,10 @@ class ViewController: UIViewController {
       
       if workSession == nil {
          // This line is for when you want the user to set the timer
-         //         workSession = WorkSession(workTimer: workTimerPicker.countDownDuration, breakTimer: breakTimerPicker.countDownDuration, longBreakTimer: nil, numSessions: Int(stepper.value))
+                  workSession = WorkSession(workTimer: workTimerPicker.countDownDuration, breakTimer: breakTimerPicker.countDownDuration, longBreakTimer: nil, numSessions: Int(stepper.value))
          
          // this line is for testing the timer using seconds instead of minutes.
-         workSession = WorkSession(workTimer: 5, breakTimer: 1, longBreakTimer: nil, numSessions: Int(stepper.value))
+//         workSession = WorkSession(workTimer: 5, breakTimer: 3, longBreakTimer: nil, numSessions: Int(stepper.value))
       }
       
       showTimerUI()
@@ -111,10 +111,10 @@ class ViewController: UIViewController {
       NotificationCenter.default.addObserver(self, selector: #selector(self.updateView), name: NSNotification.Name(rawValue: timerChangedKey), object: nil)
       
       // add observer for entering background
-      NotificationCenter.default.addObserver(self, selector: #selector(self.getSavedTime), name: .UIApplicationDidEnterBackground, object: nil)
+//      NotificationCenter.default.addObserver(self, selector: #selector(self.getSavedTime), name: .UIApplicationDidEnterBackground, object: nil)
 
       // add observer for entering foreground
-      NotificationCenter.default.addObserver(self, selector: #selector(self.updateForForeground), name: .UIApplicationWillEnterForeground, object: nil)
+//      NotificationCenter.default.addObserver(self, selector: #selector(self.updateForForeground), name: .UIApplicationWillEnterForeground, object: nil)
    }
 
    /**
@@ -137,9 +137,10 @@ class ViewController: UIViewController {
     * called from NotificationCenter when app enters background
     */
    @objc func getSavedTime() {
+      workSession?.pause()
       print("application did enter background.")
       // pause the currentTimer
-      workSession?.pause()
+      
       
       // save the time we entered background in shared preferences
       let shared = UserDefaults.standard
@@ -154,7 +155,9 @@ class ViewController: UIViewController {
       print("application will enter foreground")
       if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
          // add the time elapsed to the workSession
-         // TODO: make the adding factor into the total amount of time.
+         
+         // TODO: make adding to the currentTimer spill into the next timer if necessary.
+         print("elapsed time: \(savedDate.timeIntervalSinceNow)")
          workSession?.currentTimer.timeRemaining += savedDate.timeIntervalSinceNow
          workSession?.start()
       } else {
