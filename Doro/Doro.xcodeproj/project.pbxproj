@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F80B2C98208FF8C400F9C4DA /* DoroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80B2C97208FF8C400F9C4DA /* DoroUITests.swift */; };
 		F8281EE21FA1A19F009BAA01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8281EE11FA1A19F009BAA01 /* AppDelegate.swift */; };
 		F8281EE41FA1A19F009BAA01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8281EE31FA1A19F009BAA01 /* ViewController.swift */; };
 		F8281EE71FA1A1A0009BAA01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8281EE51FA1A1A0009BAA01 /* Main.storyboard */; };
@@ -16,6 +15,7 @@
 		F8281EF71FA1A299009BAA01 /* BaseTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8281EF61FA1A299009BAA01 /* BaseTimer.swift */; };
 		F8482B8C1FB27FA3008D72D8 /* CurrentTimerEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8482B8B1FB27FA3008D72D8 /* CurrentTimerEnum.swift */; };
 		F8482B8E1FB2888C008D72D8 /* NotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8482B8D1FB2888C008D72D8 /* NotificationKeys.swift */; };
+		F8C032442095AA5D00C4317F /* DoroUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C032432095AA5D00C4317F /* DoroUnitTests.swift */; };
 		F8E767241FACF835001B8DB6 /* WorkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E767231FACF835001B8DB6 /* WorkSession.swift */; };
 		F8EC14651FC62D31009CBCCB /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC14641FC62D31009CBCCB /* RoundButton.swift */; };
 /* End PBXBuildFile section */
@@ -28,12 +28,17 @@
 			remoteGlobalIDString = F8281EDD1FA1A19F009BAA01;
 			remoteInfo = Doro;
 		};
+		F8C032462095AA5D00C4317F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8281ED61FA1A19F009BAA01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8281EDD1FA1A19F009BAA01;
+			remoteInfo = Doro;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F80B2C95208FF8C300F9C4DA /* DoroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F80B2C97208FF8C400F9C4DA /* DoroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoroUITests.swift; sourceTree = "<group>"; };
-		F80B2C99208FF8C400F9C4DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8281EDE1FA1A19F009BAA01 /* Doro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8281EE11FA1A19F009BAA01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8281EE31FA1A19F009BAA01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +49,9 @@
 		F8281EF61FA1A299009BAA01 /* BaseTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTimer.swift; sourceTree = "<group>"; };
 		F8482B8B1FB27FA3008D72D8 /* CurrentTimerEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTimerEnum.swift; sourceTree = "<group>"; };
 		F8482B8D1FB2888C008D72D8 /* NotificationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationKeys.swift; sourceTree = "<group>"; };
+		F8C032412095AA5D00C4317F /* DoroUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoroUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8C032432095AA5D00C4317F /* DoroUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoroUnitTests.swift; sourceTree = "<group>"; };
+		F8C032452095AA5D00C4317F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8E767231FACF835001B8DB6 /* WorkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSession.swift; sourceTree = "<group>"; };
 		F8EC14641FC62D31009CBCCB /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,23 +71,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8C0323E2095AA5D00C4317F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F80B2C96208FF8C300F9C4DA /* DoroUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F80B2C97208FF8C400F9C4DA /* DoroUITests.swift */,
-				F80B2C99208FF8C400F9C4DA /* Info.plist */,
-			);
-			path = DoroUITests;
-			sourceTree = "<group>";
-		};
 		F8281ED51FA1A19F009BAA01 = {
 			isa = PBXGroup;
 			children = (
 				F8281EE01FA1A19F009BAA01 /* Doro */,
-				F80B2C96208FF8C300F9C4DA /* DoroUITests */,
+				F8C032422095AA5D00C4317F /* DoroUnitTests */,
 				F8281EDF1FA1A19F009BAA01 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,6 +95,7 @@
 			children = (
 				F8281EDE1FA1A19F009BAA01 /* Doro.app */,
 				F80B2C95208FF8C300F9C4DA /* DoroUITests.xctest */,
+				F8C032412095AA5D00C4317F /* DoroUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +132,15 @@
 				F8281EE31FA1A19F009BAA01 /* ViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F8C032422095AA5D00C4317F /* DoroUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				F8C032432095AA5D00C4317F /* DoroUnitTests.swift */,
+				F8C032452095AA5D00C4317F /* Info.plist */,
+			);
+			path = DoroUnitTests;
 			sourceTree = "<group>";
 		};
 		F8EC14631FC62D21009CBCCB /* Views */ = {
@@ -173,6 +189,24 @@
 			productReference = F8281EDE1FA1A19F009BAA01 /* Doro.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F8C032402095AA5D00C4317F /* DoroUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8C032482095AA5D00C4317F /* Build configuration list for PBXNativeTarget "DoroUnitTests" */;
+			buildPhases = (
+				F8C0323D2095AA5D00C4317F /* Sources */,
+				F8C0323E2095AA5D00C4317F /* Frameworks */,
+				F8C0323F2095AA5D00C4317F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8C032472095AA5D00C4317F /* PBXTargetDependency */,
+			);
+			name = DoroUnitTests;
+			productName = DoroUnitTests;
+			productReference = F8C032412095AA5D00C4317F /* DoroUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,6 +231,11 @@
 							};
 						};
 					};
+					F8C032402095AA5D00C4317F = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F8281EDD1FA1A19F009BAA01;
+					};
 				};
 			};
 			buildConfigurationList = F8281ED91FA1A19F009BAA01 /* Build configuration list for PBXProject "Doro" */;
@@ -214,6 +253,7 @@
 			targets = (
 				F8281EDD1FA1A19F009BAA01 /* Doro */,
 				F80B2C94208FF8C300F9C4DA /* DoroUITests */,
+				F8C032402095AA5D00C4317F /* DoroUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -236,6 +276,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8C0323F2095AA5D00C4317F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -243,7 +290,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F80B2C98208FF8C400F9C4DA /* DoroUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +307,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8C0323D2095AA5D00C4317F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8C032442095AA5D00C4317F /* DoroUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -268,6 +322,11 @@
 			isa = PBXTargetDependency;
 			target = F8281EDD1FA1A19F009BAA01 /* Doro */;
 			targetProxy = F80B2C9A208FF8C400F9C4DA /* PBXContainerItemProxy */;
+		};
+		F8C032472095AA5D00C4317F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8281EDD1FA1A19F009BAA01 /* Doro */;
+			targetProxy = F8C032462095AA5D00C4317F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -472,6 +531,40 @@
 			};
 			name = Release;
 		};
+		F8C032492095AA5D00C4317F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F2WG4JNKQC;
+				INFOPLIST_FILE = DoroUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ThebaudHouse.DoroUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Doro.app/Doro";
+			};
+			name = Debug;
+		};
+		F8C0324A2095AA5D00C4317F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F2WG4JNKQC;
+				INFOPLIST_FILE = DoroUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ThebaudHouse.DoroUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Doro.app/Doro";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -498,6 +591,15 @@
 			buildConfigurations = (
 				F8281EF11FA1A1A0009BAA01 /* Debug */,
 				F8281EF21FA1A1A0009BAA01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8C032482095AA5D00C4317F /* Build configuration list for PBXNativeTarget "DoroUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8C032492095AA5D00C4317F /* Debug */,
+				F8C0324A2095AA5D00C4317F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
